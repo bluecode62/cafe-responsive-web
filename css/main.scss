@@ -1,0 +1,1207 @@
+@import url("https://fonts.googleapis.com/css2?family=BBH+Bogle&family=BBH+Hegarty&family=Gowun+Dodum&family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+@mixin newMark {
+  @include size(50px, 50px);
+  line-height: 50px;
+  color: white;
+  background-color: #ba000d;
+  border-radius: 50%;
+  font-weight: 600;
+  position: absolute;
+  top: 5%;
+  left: 15%;
+}
+
+.img_box li {
+  // width: 450px;
+  // height: 500px;
+  // flex: 0 0 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}) {
+      background-image: url("../images/mainBanner_phone0#{$i}.jpg");
+    }
+  }
+}
+
+/****************** commends *******************/
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/************** Default *************************/
+.indicator {
+  padding: 0.2rem;
+  background-color: #403a3a;
+  color: white;
+  position: absolute;
+  border-radius: 20px;
+  left: 50%;
+  bottom: 5px;
+  transform: translateX(-50%);
+}
+.indicator p {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+}
+.indicator i {
+  font-size: 13px;
+}
+
+.background_shadow {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background-color: #403a3a83;
+}
+.brand_btn {
+  padding: 0.5rem 1.2rem;
+  background-color: #ba000d;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+/****************** common *******************/
+.header {
+  @include size(auto, 40px);
+  padding: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: white;
+  border-bottom: 1px solid #c7c7c7;
+}
+.header .logo_box {
+  width: 70px;
+}
+.header .arcodian {
+  @include size(35px, auto);
+  margin: 3rem;
+}
+.header .arcodian li {
+  height: 4px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  background-color: #d91226;
+}
+.header .gnb,
+.header .lnb,
+.inside_menuList {
+  display: none;
+}
+/****************** header *******************/
+.sub_menu {
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #ba000d;
+  box-sizing: border-box;
+  font-weight: 500;
+  font-size: 18px;
+  z-index: 20;
+  overflow-y: scroll;
+  transform: translateX(300px);
+  transition: 0.3s;
+}
+.sub_menu .login_close {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5rem 30px;
+}
+.sub_menu .subMenu_list {
+  overflow: hidden;
+}
+.sub_menu .subMenu_list > li {
+  border-bottom: 1px solid #403a3a;
+  margin-top: 0.5rem;
+}
+.sub_menu .subMenu_list li {
+  color: White;
+  position: relative;
+}
+.sub_menu .subMenu_list li span {
+  margin-left: 1.5rem;
+}
+.sub_menu .subMenu_list li .arrow_down {
+  float: right;
+  font-size: 25px;
+  margin-right: 1.7rem;
+}
+.sub_menu .subMenu_list li .inside {
+  background-color: #403a3a;
+  margin-top: 1.2rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.8s;
+}
+.sub_menu .subMenu_list li .inside li {
+  border-bottom: 0.1px solid white;
+  padding: 1rem;
+}
+.sub_menu .subMenu_list li .inside li:last-child {
+  border-bottom: none;
+}
+.sub_menu .subMenu_list li .inside li a {
+  color: rgb(190, 190, 190);
+}
+
+/****************** sub_menu *******************/
+.img_box {
+  overflow: hidden;
+  position: relative;
+  margin-top: 70px;
+  scroll-snap-type: x mandatory;
+}
+.img_box ul {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  transition: transform 1s ease-in-out;
+}
+.img_box li {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+.img06_txt {
+  display: none;
+}
+
+/****************** img_box *******************/
+.newMenu_box {
+  height: 100%;
+  text-align: center;
+  margin: 3rem 0;
+  position: relative;
+}
+.newMenu_box h3,
+.title_box h3 {
+  font-size: 24px;
+  color: #d91226;
+  font-weight: 900;
+  margin-bottom: 0.8rem;
+}
+.newMenu_box .btn_category {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+.newMenu_box .btn_category li {
+  padding: 0.5rem 1rem;
+  border: 1px solid #a9a2a2;
+  border-radius: 40px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+.newMenu_box .btn_category li .icon_img {
+  width: 30px;
+  height: 30px;
+  margin-right: 1rem;
+}
+
+.newMenu_box .btn_category li.active {
+  background-color: #ba000d;
+  color: white;
+}
+.icon_img.active {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(104deg)
+    brightness(103%) contrast(103%);
+}
+.newMenu_box .newMenu_list {
+  width: 100%;
+  overflow: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+  display: none;
+  transition: all 1s ease-in-out;
+  scroll-behavior: smooth;
+}
+.newMenu_box .newMenu_list li {
+  min-width: 0;
+  height: 470px;
+  box-sizing: border-box;
+  display: inline-block;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #ffebeb;
+  border: 1px solid #c7c7c7;
+  position: relative;
+}
+.newMenu_box .newMenu_list li .newMenu_txt {
+  height: 100px;
+  margin: 1rem 0;
+  color: #403a3a;
+  white-space: wrap;
+}
+.newMenu_box .newMenu_list li .newMenu_txt p {
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.newMenu_box .newMenu_list li .newMenu_txt p:first-child {
+  font-size: 20px;
+  font-weight: 700;
+}
+.newMenu_box .arrow_box {
+  width: 100%;
+  position: absolute;
+  top: 65%;
+}
+.newMenu_box .arrow_box i,
+.event_box .event_arrow i {
+  font-size: 25px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  background-color: #585858;
+  color: white;
+  position: absolute;
+  cursor: pointer;
+}
+.newMenu_box .arrow_box .arrow_left {
+  left: 5%;
+  display: none;
+}
+.newMenu_box .arrow_box .arrow_right {
+  right: 5%;
+}
+
+.newMenu_box .newMark {
+  @include newMark;
+}
+.newMenu_box .categoryMark {
+  width: 80px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #a9a2a2;
+  color: white;
+  line-height: 40px;
+}
+
+/****************** newMenu *******************/
+.brand_box {
+  box-sizing: border-box;
+  margin: 1rem 0;
+  text-align: center;
+}
+.brand_box .estore_img {
+  height: 230px;
+  background-image: url("../images/Estore.jpg");
+  background-position: 0 30%;
+  background-size: cover;
+  position: relative;
+}
+.brand_box .estore_img .brand_txt {
+  width: 70%;
+  padding-top: 1.3rem;
+  color: white;
+  margin: 0 auto;
+}
+.brand_box .subLogo_box {
+  width: 65%;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+.brand_box .brand_title {
+  font-weight: bold;
+  font-size: 22px;
+  white-space: nowrap;
+}
+.brand_box .brand_sub a {
+  font-size: 16px;
+  color: white;
+}
+
+/****************** Estore *******************/
+.history {
+  color: white;
+  text-align: center;
+}
+.history .hollys_img {
+  height: 280px;
+  background-image: url("../images/about_02.jpg");
+  background-size: cover;
+  position: relative;
+}
+.history .brand_txt {
+  padding-top: 2rem;
+  width: 70%;
+  margin: 0 auto;
+}
+.history .brand_txt .brand_title:nth-child(2) {
+  margin-bottom: 0.5rem;
+  word-break: keep-all;
+  white-space: wrap;
+}
+.history .brand_txt .brand_btn {
+  background-color: initial;
+  color: white;
+  border: 1px solid white;
+  margin: 1rem;
+}
+
+/****************** Hollys *******************/
+.franchise_img {
+  height: 200px;
+  position: relative;
+  background-image: url("../images/img_about_hollys_3.png");
+  background-size: cover;
+  color: white;
+  position: relative;
+}
+.franchise .brand_txt {
+  margin-top: 1.8rem;
+}
+.franchise .brand_txt .brand_title {
+  margin: 1rem 0;
+}
+.franchise .brand_txt .brand_sub a {
+  margin: 0.2rem 0;
+}
+.franchise .brand_btn {
+  margin: 1rem;
+}
+
+/****************** Franchise *******************/
+.search_box .search_img {
+  height: 150px;
+  position: relative;
+  background-image: url("../images/search_img.jpg");
+  background-size: cover;
+  background-position: 35% 34%;
+  background-repeat: no-repeat;
+  color: white;
+  position: relative;
+}
+.search_box .brand_txt {
+  padding: 20px;
+  position: relative;
+}
+
+.search_box .brand_txt input[type="search"] {
+  padding: 0.7rem 3rem;
+  margin: 0.7rem;
+  border-radius: 20px;
+  border: 1px solid #ba000d;
+  box-sizing: border-box;
+  // background-image: url("../images/icon_search.png");
+  // background-repeat: no-repeat;
+  // background-position: 96% center;
+  // background-size: 1.5rem;
+}
+.search_box .brand_txt .search_icon {
+  color: #585858;
+  position: absolute;
+  right: 90px;
+  top: 51%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+.search_box .brand_txt .searchbar::placeholder {
+  font-size: 12px;
+}
+.search_box .brand_txt .searchbar:focus {
+  outline: none;
+}
+
+/****************** Search*******************/
+.event_newsbox .title_box {
+  margin-top: 5rem;
+  text-align: center;
+}
+.event_newsbox .more_txt {
+  margin-top: 10px;
+  text-align: right;
+  padding-right: 1rem;
+  cursor: pointer;
+}
+.event_box {
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 0;
+}
+.event_box .event_list li {
+  margin: 1.2rem 0;
+  padding: 0.8rem;
+  border: 1px solid #c7c7c7;
+  border-radius: 5%;
+  cursor: pointer;
+}
+.event_box .event_list .event_img {
+  height: 220px;
+  background-image: url("../images/evenImg01.jpg");
+  background-size: cover;
+  background-position: center 33%;
+}
+.event_box .event_list .event02 {
+  background-image: url("../images/eventImg02.jpg");
+  background-size: cover;
+  background-position: center 60%;
+}
+.event_box .event_list .event03 {
+  background-image: url("../images/eventImg03.jpg");
+  background-size: cover;
+  background-position: center 60%;
+}
+.event_box .event_list .event_txtBox {
+  height: 100px;
+  margin-top: 1rem;
+  text-align: left;
+}
+.event_box .event_list .event_txtBox p {
+  word-break: keep-all;
+}
+.event_box .event_list .event_txtBox .event_date {
+  color: #ba000d;
+  font-size: 14px;
+  font-weight: 500;
+}
+.event_box .event_list .event_txtBox .event_title {
+  font-weight: 600;
+  margin: 0.3rem 0;
+}
+.event_box .event_list .event_txtBox .event_shorts {
+  font-size: 14px;
+}
+.event_arrow,
+.pc_list,
+.detail_txt,
+.detail_more {
+  display: none;
+}
+
+/****************** Event*******************/
+.news_box {
+  height: 430px;
+  border-top: 1px solid #ba000d;
+  border-bottom: 1px solid #ba000d;
+  padding: 10px;
+  line-height: 40px;
+  margin-top: 4rem;
+  overflow: hidden;
+}
+.news_titleBar {
+  margin-top: 1rem;
+}
+.news_titleBar i {
+  color: #ba000d;
+  display: block;
+  font-size: 30px;
+  float: left;
+  margin-top: 0.4rem;
+  padding-right: 0.5rem;
+}
+.news_box h3 {
+  display: inline-block;
+}
+.news_box .more_txt {
+  float: right;
+}
+.news_box .article_list {
+  margin-top: 1.5rem;
+}
+.news_box .article_list li {
+  border-bottom: 1px solid #d7c6ca;
+  padding: 0.7rem 0.3rem;
+}
+.news_box .article_list li:last-child {
+  border-bottom: none;
+}
+.news_box .article_list .left_date {
+  float: left;
+  margin-right: 1rem;
+  font-weight: 600;
+}
+.news_box .article_list .right_title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: keep-all;
+  color: #403a3a;
+}
+
+/****************** News *******************/
+.place_box {
+  margin-top: 5rem;
+  overflow: hidden;
+}
+.place_box .hollys_sns {
+  display: inline-block;
+  padding: 0.7rem;
+  margin: 1.8rem 0;
+  border-radius: 20px;
+  font-size: 14px;
+  border: 1px solid #403a3a;
+  transition: all 0.2s;
+}
+.place_box .hollys_sns:hover {
+  color: white;
+  background-color: #ba000d;
+  border: 1px solid white;
+}
+.place_box .sns_pics {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #ba000d;
+}
+.place_box .sns_pics li {
+  width: calc(100% - 50%);
+  box-sizing: border-box;
+}
+.place_box .sns_pics li:nth-child(1),
+.place_box .sns_pics li:nth-child(2) {
+  margin-bottom: 10px;
+}
+/****************** sns *******************/
+.top_menu {
+  width: 60px;
+  height: 60px;
+  line-height: 20px;
+  background-color: #ba000d;
+  border-radius: 50%;
+  color: white;
+  margin: 10px;
+  text-align: center;
+  position: fixed;
+  right: 2%;
+  bottom: 20%;
+  z-index: 20;
+}
+.top_menu i {
+  font-size: 20px;
+  padding-top: 0.5rem;
+}
+.top_menu .top {
+  font-size: 15px;
+  font-weight: 500;
+}
+/****************** top_menu *******************/
+.footer {
+  padding: 1.8rem;
+  background-color: #403a3a;
+}
+.footer .company_policy {
+  color: white;
+  font-size: 13px;
+  text-align: center;
+  font-weight: 500;
+}
+.footer .company_policy:nth-child(2) p {
+  margin-bottom: 0.9rem;
+}
+
+.footer .company_location {
+  color: #8e8e8e;
+  font-size: 12px;
+  text-align: center;
+}
+
+.footer .sns_list {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+.footer .sns_list li {
+  width: 50px;
+  height: 50px;
+  margin: 0 1rem;
+  display: inline-block;
+}
+
+/****************** footer *******************/
+.mobileModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+
+  .modalBox {
+    position: relative;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    height: 200px;
+    font-size: 18px;
+    max-width: 400px;
+    font-weight: 500;
+    word-break: keep-all;
+  }
+
+  .modalBox span {
+    color: #ba000d;
+  }
+
+  .modalBox .icon {
+    width: 250px;
+    height: 200px;
+    background: url("../images/Hollys.png");
+    background-size: cover;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+  }
+
+  .close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 25px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
+
+/****************** 모달창 *******************/
+
+@media all and (min-width: 601px) {
+  .img_box {
+    width: 100%;
+    min-height: 400px;
+  }
+  .img_box li {
+    height: 550px;
+    background-position: center 20%;
+  }
+  .img_box li:nth-child(2) {
+    background-position: center 25%;
+  }
+  .img_box li:nth-child(3) {
+    background-position: center 25%;
+  }
+  .img_box li:nth-child(4) {
+    background-position: center -1%;
+  }
+  .img_box li:nth-child(5) {
+    background-position: center -1%;
+  }
+  .img_box li:nth-child(6) {
+    background-position: center -1%;
+  }
+  .newMenu_box .newMenu_list li {
+    width: 50%;
+  }
+  .indicator {
+    bottom: 30px;
+  }
+  .newMenu_box .btn_category li {
+    padding: 0.5rem 2.2rem;
+  }
+
+  .newMenu_box .arrow_box .arrow_left {
+    display: block;
+  }
+  .brand_box button {
+    padding: 0.6rem 2.5rem;
+  }
+  .search_box .search_img {
+    height: 170px;
+  }
+
+  .search_box .brand_txt input[type="search"] {
+    padding: 1rem 7rem;
+  }
+  .search_box .brand_txt .search_icon {
+    right: 200px;
+  }
+  .place_box .sns_pics {
+    gap: 10px;
+  }
+  .place_box .sns_pics li {
+    width: calc(50% - 5px);
+  }
+}
+
+@media all and (min-width: 769px) {
+  .header_out {
+    position: relative;
+  }
+  .header {
+    max-width: 1200px;
+    height: 120px;
+    padding: 0;
+    margin: 0 auto;
+    justify-content: flex-start;
+    position: relative;
+  }
+  .header .logo_box {
+    width: 120px;
+    margin-left: 1rem;
+  }
+  .header .arcodian {
+    display: none;
+  }
+  .header .gnb {
+    display: flex;
+    width: 800px;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    top: 10px;
+    right: 35px;
+  }
+  .header .gnb a {
+    margin-right: 20px;
+    font-size: 14px;
+    color: #666666;
+  }
+  .header .gnb .brand_btn {
+    padding: 0.5rem 2rem;
+    margin-top: 0;
+    cursor: pointer;
+  }
+  .header .lnb {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 40px;
+    width: 1000px;
+    margin: 0 auto;
+  }
+  .header .lnb > li {
+    width: 150px;
+    text-align: center;
+    font-weight: 500;
+  }
+  .inside_menuList {
+    width: 100%;
+    height: 0;
+    display: flex;
+    overflow: hidden;
+    background-color: rgba(231, 231, 231, 0.856);
+    position: absolute;
+    top: 120px;
+    left: 0;
+    z-index: 10;
+    transition: all 0.3s ease;
+  }
+  .header_out:hover .inside_menuList {
+    height: 200px;
+  }
+  .inside_menuList .inside_menu {
+    width: 200px;
+    text-align: center;
+  }
+  .inside_menuList .inside_menu:first-child {
+    margin-left: 120px;
+  }
+  .inside_menuList .inside_menu li {
+    margin-top: 1rem;
+    font-size: 14px;
+  }
+  .inside_menuList .inside_menu a:hover {
+    font-weight: bold;
+    color: #ba000d;
+  }
+  .img_box {
+    margin-top: 0;
+  }
+  .img_box li {
+    height: 470px;
+    background-position: center 25%;
+    position: relative;
+  }
+  .img_box li:nth-child(1) {
+    background-image: url("../images/mainBanner01.jpg");
+  }
+  .img_box li:nth-child(2) {
+    background-image: url("../images/mainBanner02.jpg");
+  }
+  .img_box li:nth-child(3) {
+    background-image: url("../images/mainBanner03.png");
+    background-position: 5% center;
+  }
+  .img_box li:nth-child(4) {
+    background-image: url("../images/mainBanner04.jpg");
+  }
+  .img_box li:nth-child(5) {
+    background-image: url("../images/mainBanner05.jpg");
+  }
+  .img_box li:nth-child(6) {
+    background-image: url("../images/mainBanner06.jpg");
+    background-position: center;
+  }
+  .img06_txt {
+    display: block;
+    width: 200px;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+  }
+  .img06_txt h2 {
+    font-size: 50px;
+    color: #ba000d;
+  }
+  .img06_txt span {
+    color: #000;
+  }
+  .img06_txt p {
+    font-size: 14px;
+  }
+  .newMenu_box .btn_category {
+    justify-content: center;
+    gap: 10px;
+  }
+  .newMenu_box .newMenu_list li {
+    width: 33%;
+    height: 40%;
+    box-sizing: border-box;
+  }
+  .brand_box {
+    margin: 1rem 0;
+    overflow: hidden;
+  }
+  .brand_box .background_shadow {
+    background-color: transparent;
+  }
+  .brand_box .estore_img {
+    height: 320px;
+    background-image: url("../images/PC.jpg");
+    background-position: center 60%;
+  }
+  .brand_box .estore_img .brand_txt {
+    padding-top: 1.3rem;
+    color: white;
+    text-align: left;
+    margin-left: 3rem;
+  }
+  .brand_box .subLogo_box {
+    height: 100px;
+    padding: 1rem 0;
+    margin: 0;
+  }
+  .brand_box .brand_sub a {
+    font-size: 15px;
+  }
+  .brand_btn {
+    border-radius: 10px;
+    font-size: 16px;
+  }
+  .brand_box .brand_btn:hover {
+    color: #ba000d;
+    background-color: white;
+    transition: all 0.3s;
+  }
+  .history {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    background-color: #ba000d;
+  }
+  .history .hollys_img {
+    width: 50%;
+    height: 100%;
+  }
+  .history .brand_txt {
+    text-align: left;
+    position: absolute;
+    left: 110%;
+    top: 10%;
+  }
+  .history .brand_txt .brand_btn {
+    margin: 0;
+    margin-top: 1rem;
+  }
+  .history .brand_txt .brand_sub a {
+    font-size: 16px;
+  }
+  .franchise .franchise_img {
+    background-position: center 55%;
+  }
+  .franchise .brand_title {
+    font-size: 22px;
+  }
+  .franchise .background_shadow {
+    display: flex;
+    justify-content: space-around;
+  }
+  .franchise .brand_txt {
+    width: 30%;
+    order: 2;
+    text-align: left;
+  }
+  .franchise .btn_box {
+    order: 1;
+    line-height: 200px;
+  }
+  .franchise_img .background_shadow,
+  .search_box .background_shadow {
+    background-color: #403a3a83;
+  }
+  .search_box .brand_txt {
+    width: 480px;
+    margin: 0 auto;
+  }
+  .search_box .brand_txt input[type="search"] {
+    width: 500px;
+    height: 50px;
+    padding: 0 30px;
+    text-align: left;
+  }
+  .search_box .brand_txt .search_icon {
+    top: 51%;
+    right: 5px;
+  }
+  .search_box .brand_sub {
+    text-align: left;
+    margin-left: 2rem;
+  }
+  .event_newsbox {
+    overflow: hidden;
+    margin: 4rem 0;
+  }
+  .event_newsbox .title_box .more_txt {
+    display: none;
+  }
+  .event_box {
+    width: 65%;
+    float: left;
+    margin-top: 0;
+  }
+  .event_box .pc_list {
+    display: block;
+    width: 100%;
+    position: relative;
+  }
+  .event_box .event_list li {
+    padding: 0;
+    overflow: hidden;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  .event_box .event_list li.on {
+    display: block;
+    opacity: 1;
+  }
+  .event_box .event_list .event_img {
+    width: 100%;
+    height: 430px;
+    position: relative;
+    overflow: hidden;
+  }
+  .event_box .event_list .event_txtBox {
+    width: 100%;
+    height: 100px;
+    padding: 0 1rem;
+    padding-top: 1.5rem;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(61, 61, 61, 0.712);
+  }
+  .event_box .event_list .event_txtBox .event_date,
+  .event_box .event_list .event_txtBox .event_shorts {
+    font-size: 16px;
+    color: white;
+  }
+  .event_box .event_list .event_txtBox .event_title {
+    font-size: 20px;
+    color: white;
+    margin: 0;
+  }
+  .event_box .event_list .event_txtBox .detail_txt {
+    display: inline;
+    margin-left: 0.5rem;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+  }
+  .event_box .event_list .event_txtBox .detail_more {
+    display: block;
+    color: white;
+    font-weight: 500;
+    position: absolute;
+    right: 8%;
+    top: 40%;
+  }
+  .event_box .event_list .event_arrow {
+    top: 40%;
+    width: 100%;
+    height: 50px;
+    display: block;
+    position: absolute;
+  }
+  .event_box .event_list .event_arrow .eventLeft i {
+    left: 2%;
+  }
+  .event_box .event_list .event_arrow .eventRight i {
+    right: 2%;
+  }
+  .mobile_tablet {
+    display: none;
+  }
+  .news_box {
+    height: 400px;
+    width: 30%;
+    float: left;
+    margin-top: 2rem;
+  }
+  .place_box {
+    margin-top: 10rem;
+    height: 1120px;
+  }
+  .place_box .sns_pics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 300px;
+  }
+  .place_box .sns_pics li {
+    width: 100%;
+  }
+  .footer_outer {
+    width: 100%;
+    background-color: #403a3a;
+  }
+  .footer {
+    overflow: hidden;
+    padding: 4rem;
+  }
+  .footer .company_policy {
+    float: left;
+    letter-spacing: 1px;
+  }
+  .footer .company_location {
+    width: 64%;
+    float: left;
+    text-align: left;
+    overflow-wrap: break-word;
+  }
+  .footer .sns_list {
+    float: right;
+    margin: 0;
+  }
+  .footer .sns_list li {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media all and (min-width: 1071px) {
+  .inside_menuList {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  .inside_menuList .inside_menu {
+    width: 160px;
+  }
+  .inside_menuList .inside_menu:first-child {
+    padding-left: 20px;
+  }
+  .newMenu_box {
+    width: 1070px;
+    margin: 5rem auto;
+  }
+  .newMenu_box .arrow_box {
+    top: 55%;
+  }
+  .newMenu_box .arrow_box .arrow_left {
+    left: -5%;
+  }
+  .newMenu_box .arrow_box .arrow_right {
+    right: -5%;
+  }
+  .history .hollys_img {
+    width: 55%;
+  }
+  .news_box {
+    width: 33%;
+  }
+  .place_box {
+    margin-top: 10rem;
+    height: 1180px;
+  }
+  .place_box .sns_pics {
+    grid-auto-rows: 320px;
+  }
+  .footer {
+    width: 1070px;
+    margin: 0 auto;
+  }
+}
+@media all and (min-width: 1440px) {
+  .estore {
+    position: relative;
+  }
+  .brand_box .subLogo_box {
+    height: 100%;
+    width: 700px;
+  }
+  .estore .brand_txt .inside_brand_txt {
+    position: absolute;
+    left: 180px;
+  }
+  .footer {
+    position: relative;
+  }
+  .footer .company_location {
+    max-width: 570px;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    float: none;
+  }
+  .footer .sns_list {
+    position: absolute;
+    right: 5%;
+    top: 40%;
+  }
+}

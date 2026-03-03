@@ -1,0 +1,728 @@
+@import url("https://fonts.googleapis.com/css2?family=BBH+Bogle&family=BBH+Hegarty&family=Gowun+Dodum&family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+/************** Default *************************/
+@import "main";
+/************** Commends *************************/
+.subBanner_img {
+  width: 100%;
+  min-height: 200px;
+  background-image: url("../images/subBanner01.png");
+  background-position: center top 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  position: relative;
+  overflow: hidden;
+}
+.subBanner_img .bread_crum {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 40%;
+  color: white;
+  padding: 0.5rem;
+  display: none;
+}
+.subBanner_img .bread_crum span {
+  margin: 0.5rem;
+  font-size: 13px;
+}
+.subBanner_img .Menu_title {
+  position: absolute;
+  width: 100%;
+  top: 60%;
+  text-align: center;
+}
+.subBanner_img .Menu_title p {
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+}
+.subBanner_img .Menu_title .shorts {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/************** SubBanner *************************/
+.menu_list {
+  height: 40px;
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-around;
+  border-bottom: 1px solid #d7c6ca;
+}
+.menu_list li {
+  min-width: 0;
+  padding: 0 1rem;
+  font-weight: 500;
+  color: #403a3a;
+}
+.menu_list li.on {
+  color: #ba000d;
+  border-bottom: 3px solid #ba000d;
+}
+/************** Menu_list *************************/
+.filter_box {
+  width: 300px;
+  height: 120px;
+  border: 1px solid #8e8e8e;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-top: 30px;
+  //position: relative;
+  display: none;
+}
+.filter_box.on {
+  display: block;
+}
+.filter_box .filter_check {
+  padding: 20px;
+  float: left;
+  overflow: hidden;
+}
+.filter_box .filter_check li {
+  float: left;
+  margin: 0.5rem;
+}
+.filter_box .filter_check li input {
+  margin-right: 5px;
+}
+.filter_input {
+  display: none;
+}
+.filter_input,
+.search_icon {
+  display: none;
+}
+/************** filter_box *************************/
+
+.menuImg_list {
+  margin-top: 2.5rem;
+  height: 100%;
+  margin-bottom: 50px;
+  text-align: center;
+  display: none;
+}
+.menuImg_list.on {
+  display: block;
+}
+.menuImg_list ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  // justify-content: space-between;
+}
+.menuImg_list ul li {
+  width: calc(100% - 50% - 10px);
+  min-height: 310px;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 1px solid #c0c0c0;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+  display: none;
+}
+.menuImg_list ul li:nth-child(-n + 8) {
+  display: block;
+}
+.menuImg_list ul li .menu_imgBox {
+  height: 67%;
+}
+.menuImg_list ul li .menu_txtBox {
+  min-width: 0;
+  min-height: 100px;
+  margin-top: 0.5rem;
+}
+.menuImg_list ul li .menu_txtBox .menuTitle {
+  font-weight: 600;
+  font-size: 16px;
+  word-break: keep-all;
+}
+.menuImg_list ul li .menu_txtBox .menuEn {
+  font-size: 14px;
+  word-break: keep-all;
+}
+.menuImg_list ul li .newMark {
+  @include newMark;
+  left: 5%;
+}
+.menuImg_list .menu_imgBox .menu_shadow {
+  background-color: #faeef1e1;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+.menuImg_list .menu_imgBox .menu_shadow.open {
+  opacity: 1;
+}
+.menuImg_list .menu_imgBox .menu_shadow .inside_txt {
+  box-sizing: border-box;
+  margin: 5px;
+}
+.menuImg_list .menu_imgBox .menu_shadow .inside_txt .menuTitle {
+  margin-top: 1rem;
+}
+.menuImg_list .menu_imgBox .menu_shadow .inside_txt .menuEn {
+  margin-top: 0.3rem;
+  font-size: 13px;
+}
+.menuImg_list .menu_imgBox .menu_shadow .inside_txt .detail {
+  font-size: 12px;
+  min-width: 150px;
+  word-break: keep-all;
+  margin: 0.5rem 0;
+}
+.menuImg_list .menu_imgBox .menu_shadow .inside_txt .foodInfo {
+  text-align: left;
+  display: flex;
+  justify-content: center;
+}
+.menuImg_list .menu_imgBox .menu_shadow .inside_txt .foodInfo .left_info,
+.right_info {
+}
+.menuImg_list .menu_imgBox .menu_shadow .inside_txt .foodInfo .nameInfo {
+  font-size: 14px;
+  font-weight: 600;
+  word-break: keep-all;
+  margin: 5px 0;
+  padding-right: 4px;
+}
+.menuImg_list .menu_imgBox .menu_shadow .inside_txt .foodInfo .infoTxt {
+  font-size: 12px;
+}
+.menuImg_list .menu_imgBox .menu_shadow .giftCon {
+  border: none;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #ba000d;
+  border-radius: 10px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+.menuImg_list .menu_imgBox .menu_shadow .detailBox {
+  padding: 0.5rem 2rem;
+  margin-top: 2rem;
+}
+.menuImg_list .menu_imgBox .menu_shadow .detailBox a {
+  color: white;
+}
+.more_btn {
+  border: none;
+  padding: 0.5rem 3rem;
+  background-color: #ba000d;
+  border-radius: 10px;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+}
+
+.warning {
+  color: red;
+  font-size: 10px;
+  margin: 0;
+}
+
+/************************** menu_list  ***************************/
+.smart_order {
+  padding: 10px;
+  min-height: 100px;
+  text-align: center;
+  position: relative;
+  background-image: url("../images/smartorderBanner01.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: #e7e1d9;
+  background-position: -10px 100%;
+  cursor: pointer;
+}
+.smart_order .order_txtBox {
+  position: absolute;
+  right: 2%;
+}
+.smart_order .order_txtBox .smartOrder_box {
+  font-size: 15px;
+  width: 55%;
+  padding: 0.5rem 1rem;
+  margin: 5px auto;
+  background-color: #ba000d;
+  border-radius: 10px;
+  color: white;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+.smart_order .order_txtBox .smartOrder_box:hover {
+  color: #ba000d;
+  background-color: white;
+}
+.smart_order .order_txtBox .order_line {
+  font-size: 12px;
+}
+.smart_order .order_txtBox .order_line02 {
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 1px solid #ba000d;
+}
+.smart_order .order_txtBox .explain_link {
+  font-size: 12px;
+  color: #4b4a4a;
+  cursor: pointer;
+}
+.smart_order .order_txtBox .order_shorts {
+  font-size: 12px;
+}
+.gnb,
+.lnb {
+  display: none;
+}
+
+@media all and (min-width: 601px) {
+  .subBanner_img .Menu_title {
+    top: 50%;
+  }
+  .subBanner_img .Menu_title p {
+    font-size: 24px;
+  }
+  .subBanner_img .Menu_title .shorts {
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .subBanner_img {
+    min-height: 350px;
+  }
+  .subBanner_img .bread_crum {
+    top: 22%;
+    padding: 0.6rem;
+    display: block;
+  }
+  .subBanner_img .bread_crum span {
+    font-size: 14px;
+  }
+  .subBanner_img .Menu_title p {
+    font-size: 24px;
+  }
+  .menuImg_list ul li {
+    width: calc(32% - 10px);
+  }
+  .menuImg_list ul li:nth-child(-n + 9) {
+    display: block;
+  }
+  .filter_box {
+    width: 400px;
+    height: 180px;
+  }
+  .filter_box .filter_input {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 1rem;
+    border: 1px solid #ba000d;
+  }
+  .filter_box .input_box {
+    width: 100%;
+    position: relative;
+  }
+  .filter_box .search_icon {
+    position: absolute;
+    top: 12%;
+    right: 13%;
+    cursor: pointer;
+    color: #8e8e8e;
+    display: block;
+  }
+  .filter_box .filter_check {
+    margin-left: 1.5rem;
+    padding: 10px 20px;
+  }
+  .menuImg_list .menu_imgBox .menu_shadow .inside_txt .menuTitle {
+    margin-top: 0.5rem;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .menuImg_list .menu_imgBox .menu_shadow .inside_txt .menuEn {
+    font-size: 14px;
+    margin: 0;
+  }
+  .menuImg_list .menu_imgBox .menu_shadow .inside_txt .detail {
+    box-sizing: border-box;
+    font-size: 14px;
+    margin: 0.3rem 0.1rem;
+    min-width: 100px;
+    word-break: keep-all;
+  }
+  .menuImg_list .menu_imgBox .menu_shadow .inside_txt .foodInfo {
+    box-sizing: border-box;
+    padding: 8px 0;
+  }
+  .menuImg_list .menu_imgBox .menu_shadow .inside_txt .foodInfo .left_info,.right_info {
+    padding: 2px;
+  }
+  .menuImg_list .menu_imgBox .menu_shadow .inside_txt .foodInfo .nameInfo {
+    font-size: 16px;
+    font-weight: 600;
+    word-break: keep-all;
+    padding-right: 2px;
+  }
+  .menuImg_list .menu_imgBox .menu_shadow .inside_txt .foodInfo .infoTxt {
+    font-size: 14px;
+    text-align: initial;
+  }
+  .warning {
+    font-size: 11px;
+  }
+  .newMD .menu_imgBox .menu_shadow .inside_txt .detail,
+   .MDmenu .menu_imgBox .menu_shadow .inside_txt .detail {
+    margin: 1.5rem 0;
+  }
+  .smart_order {
+    background-position: center 10%;
+    min-height: 150px;
+  }
+  .smart_order .order_txtBox {
+    top: 20%;
+    right: 6%;
+  }
+  .smart_order .order_txtBox .order_line {
+    font-size: 14px;
+  }
+  .smart_order .order_txtBox .order_line02 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .smart_order .order_txtBox .explain_link {
+    font-size: 13px;
+    color: #4b4a4a;
+    cursor: pointer;
+  }
+  .smart_order .order_txtBox .order_shorts {
+    font-size: 12px;
+  }
+}
+
+@media all and (min-width: 769px) {
+  .gnb,
+  .lnb {
+    display: block;
+  }
+  .menu_list li {
+    padding: 0 2rem;
+  }
+  .subBanner_img {
+    background-position: 0;
+  }
+  .subBanner_img .bread_crum {
+    top: 0;
+  }
+  .filter_box .search_icon {
+    top: 14%;
+    right: 13%;
+  }
+  .wrap {
+    margin: 10px;
+  }
+  .menuImg_list ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .menuImg_list ul li {
+    width: 100%;
+    display: none;
+  }
+  .menuImg_list ul li:nth-child(-n + 12) {
+    display: block;
+  }
+  .menuImg_list .menu_imgBox .menu_shadow .inside_txt .menuTitle {
+    margin-top: 0.8rem;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .menuImg_list .menu_imgBox .menu_shadow .inside_txt .menuEn {
+    font-size: 14px;
+    margin: 0;
+  }
+  .menuImg_list .menu_imgBox .menu_shadow .inside_txt .detail {
+    font-size: 14px;
+    margin: 0.3rem 0.1rem;
+  }
+  .menuImg_list .menu_imgBox .menu_shadow .inside_txt .foodInfo {
+    box-sizing: border-box;
+  }
+  .menuImg_list .menu_imgBox .menu_shadow .inside_txt .foodInfo .left_info, .right_info {
+  }
+  .menuImg_list .menu_imgBox .menu_shadow .inside_txt .foodInfo .nameInfo {
+    font-size: 16px;
+  }
+  .menuImg_list .menu_imgBox .menu_shadow .inside_txt .foodInfo .infoTxt {
+    font-size: 14px;
+  }
+  .menuImg_list ul li .menu_txtBox {
+    margin-top: 0.5rem;
+  }
+  .menuImg_list ul li .menu_txtBox .menuTitle {
+    font-weight: 600;
+    font-size: 18px;
+    word-break: keep-all;
+  }
+  .menuImg_list ul li .menu_txtBox .menuEn {
+    font-size: 14px;
+    word-break: keep-all;
+  }
+  .menuImg_list .menu_imgBox .menu_shadow .giftCon {
+    margin-top: 0.2rem;
+    padding: 0.6rem 1.5rem;
+    background-color: #ba000d;
+    border-radius: 10px;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  .newMD .menu_imgBox .menu_shadow .inside_txt .detail {
+    margin: 2rem 0;
+  }
+  .MDmenu .menu_imgBox .menu_shadow .inside_txt .detail {
+    margin: 2rem 0;
+  }
+  .smart_order {
+    min-height: 200px;
+  }
+  .smart_order .order_txtBox {
+    top: 25%;
+    right: 10%;
+  }
+  .smart_order .order_txtBox .order_line {
+    font-size: 16px;
+  }
+  .smart_order .order_txtBox .order_line02 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .smart_order .order_txtBox .explain_link {
+    font-size: 14px;
+    color: #4b4a4a;
+    cursor: pointer;
+  }
+  .footer {
+    overflow: hidden;
+    padding: 4rem;
+  }
+  .footer .company_policy {
+    float: left;
+    letter-spacing: 1px;
+  }
+  .footer .company_location {
+    width: 64%;
+    float: left;
+    text-align: left;
+    overflow-wrap: break-word;
+  }
+  .footer .sns_list {
+    float: right;
+    margin: 0;
+  }
+  .footer .sns_list li {
+    width: 45px;
+    height: 45px;
+  }
+
+  @media all and (min-width: 1071px) {
+    .subBanner_img {
+      position: relative;
+    }
+    .subBanner_img .bread_corner {
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      height: 50px;
+    }
+    .subBanner_img .banner_inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .subBanner_img .banner_inner .bread_crum {
+      position: absolute;
+      left: 0;
+      color: #fff;
+      background-color: initial;
+    }
+    .subBanner_img .Menu_title {
+      top: 50%;
+    }
+    .subBanner_img .Menu_title p {
+      font-weight: 600;
+      font-size: 30px;
+    }
+    .subBanner_img .Menu_title .shorts {
+      font-size: 18px;
+      font-weight: 400;
+    }
+    .filter_box .search_icon {
+      top: 15%;
+      right: 15%;
+    }
+    .filter_box .filter_check li input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+    }
+    .menuImg_list ul li .menu_imgBox {
+      height: auto;
+    }
+    .menuImg_list .menu_imgBox .menu_shadow .inside_txt .menuTitle {
+      margin-top: 1rem;
+      font-weight: 500;
+      font-size: 22px;
+    }
+    .menuImg_list .menu_imgBox .menu_shadow .inside_txt .menuEn {
+      font-size: 18px;
+      margin: 0;
+    }
+    .menuImg_list .menu_imgBox .menu_shadow .inside_txt .detail {
+      padding: 0 10px;
+      font-size: 16px;
+      margin: 0 auto;
+    }
+    .menuImg_list .menu_imgBox .menu_shadow .inside_txt .foodInfo {
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    .menuImg_list .menu_imgBox .menu_shadow .inside_txt .foodInfo .nameInfo {
+      font-size: 18px;
+    }
+    .menuImg_list .menu_imgBox .menu_shadow .inside_txt .foodInfo .infoTxt {
+      font-size: 17px;
+    }
+    .warning {
+      font-size: 14px;
+      max-width: 280px;
+      margin: 0.2rem auto;
+    }
+    .menuImg_list ul li .menu_txtBox {
+      margin-top: 0.5rem;
+    }
+    .menuImg_list ul li .menu_txtBox .menuTitle {
+      font-weight: 600;
+      font-size: 18px;
+      word-break: keep-all;
+    }
+    .menuImg_list ul li .menu_txtBox .menuEn {
+      font-size: 14px;
+      word-break: keep-all;
+    }
+    .menuImg_list .menu_imgBox .menu_shadow .giftCon {
+      margin-top: 2rem;
+      padding: 0.6rem 1.5rem;
+      background-color: #ba000d;
+      border-radius: 10px;
+      color: white;
+      font-weight: 500;
+      font-size: 16px;
+    }
+    .MDmenu .menu_imgBox .menu_shadow .inside_txt .detail {
+      margin: 2rem 0;
+    }
+    .smart_order .order_txtBox {
+      top: 15%;
+      right: 12%;
+    }
+    .smart_order .order_txtBox .smartOrder_box {
+      padding: 0.5rem 1.5rem;
+      font-size: 24px;
+    }
+    .smart_order .order_txtBox .order_line {
+      font-size: 20px;
+    }
+    .smart_order .order_txtBox .order_line02 {
+      font-size: 24px;
+      font-weight: 600;
+    }
+    .smart_order .order_txtBox .explain_link {
+      font-size: 16px;
+    }
+  }
+  @media all and (min-width: 1440px) {
+    .filter_box {
+      width: 600px;
+      height: 180px;
+    }
+    .menuImg_list .menu_imgBox .menu_shadow .inside_txt .menuTitle {
+      margin-top: 2rem;
+      font-size: 22px;
+    }
+    .menuImg_list .menu_imgBox .menu_shadow .inside_txt .menuEn {
+      font-size: 18px;
+    }
+    .menuImg_list .menu_imgBox .menu_shadow .inside_txt .detail {
+      padding: 0 15px;
+      font-size: 18px;
+      margin-top: 1rem;
+    }
+     .menuImg_list .menu_imgBox .menu_shadow .inside_txt .foodInfo{
+      margin-top: 5px;
+     }
+    .menuImg_list .menu_imgBox .menu_shadow .inside_txt .foodInfo .left_info,
+    .right_info {
+      max-width: 150px;
+      padding: 0;
+    }
+    .menuImg_list .menu_imgBox .menu_shadow .inside_txt .foodInfo .nameInfo {
+      font-size: 18px;
+      padding-right: 1rem;
+    }
+    .menuImg_list .menu_imgBox .menu_shadow .inside_txt .foodInfo .infoTxt {
+      font-size: 16px;
+      padding-right: 1rem;
+    }
+    .menuImg_list ul li .menu_txtBox {
+      margin-top: 0.5rem;
+    }
+    .menuImg_list ul li .menu_txtBox .menuTitle {
+      font-size: 18px;
+    }
+    .menuImg_list ul li .menu_txtBox .menuEn {
+      font-size: 14px;
+    }
+    .menuImg_list .menu_imgBox .menu_shadow .inside_txt .detail {
+      margin-top: 1rem;
+    }
+    .menuImg_list .menu_imgBox .menu_shadow .giftCon {
+      margin-top: .4rem;
+      font-size: 16px;
+    }
+    .newMD .menu_imgBox .menu_shadow .inside_txt .detail,
+    .MDmenu .menu_imgBox .menu_shadow .inside_txt .detail {
+      margin: 3rem auto;
+    }
+  }
+}

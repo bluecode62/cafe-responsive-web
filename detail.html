@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--favicon-->
+    <link rel="icon" href="favicon.png" />
+    <title>할리스</title>
+
+    <!--폰트어썸-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <!--CSS_main.css-->
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/sub.css" />
+    <link rel="stylesheet" href="./css/detail.css" />
+
+    <!-- gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollToPlugin.min.js"></script>
+    <!-- ScrollTrigger -->
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+    <!--javascript-->
+    <script src="./js/main.js"></script>
+    <script src="./js/detail.js" defer></script>
+  </head>
+  <body>
+    <div class="sub_menu">
+      <div class="login_close">
+        <div class="Login">Login</div>
+        <div class="close_box">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+
+      <ul class="subMenu_list">
+        <li>
+          <span>Menu</span>
+          <i class="fa-solid fa-angle-down arrow_down"></i>
+          <ul class="inside">
+            <li>
+              <a href="./sub.html"> 신메뉴 </a>
+            </li>
+            <li>
+              <a href="./sub.html"> 음료 </a>
+            </li>
+            <li>
+              <a href="./sub.html"> 푸드 </a>
+            </li>
+            <li>
+              <a href="./detail.html"> MD </a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span>Membership</span>
+          <i class="fa-solid fa-angle-down arrow_down"></i>
+          <ul class="inside">
+            <li>
+              <a href="#"> 할리스카드</a>
+            </li>
+            <li>
+              <a href="#"> 스마트오더</a>
+            </li>
+            <li>
+              <a href="#"> 멤버십</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span>Event</span>
+          <i class="fa-solid fa-angle-down arrow_down"></i>
+          <ul class="inside">
+            <li>
+              <a href="#">이벤트</a>
+            </li>
+            <li>
+              <a href="#">뉴스</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span>Store</span>
+          <i class="fa-solid fa-angle-down arrow_down"></i>
+          <ul class="inside">
+            <li>
+              <a href="#">매장찾기</a>
+            </li>
+            <li>
+              <a href="#">케이터링/커피트럭</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span>Brand</span>
+          <i class="fa-solid fa-angle-down arrow_down"></i>
+          <ul class="inside">
+            <li>
+              <a href="#">브랜드 스토리</a>
+            </li>
+            <li>
+              <a href="#">원두 소개</a>
+            </li>
+            <li>
+              <a href="#">BI소개</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span>Customer</span>
+          <i class="fa-solid fa-angle-down arrow_down"></i>
+          <ul class="inside">
+            <li>
+              <a href="#">본사 위치</a>
+            </li>
+            <li>
+              <a href="#">채용 안내</a>
+            </li>
+            <li>
+              <a href="#">가맹문의 및 절차</a>
+            </li>
+            <li>
+              <a href="#">창업설명회</a>
+            </li>
+            <li>
+              <a href="#">상담신청</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="header_out" id="headerTop">
+      <header class="header">
+        <div class="logo_box">
+          <a href="./index.html">
+            <img src="./images/logo.gif" alt="로고" />
+          </a>
+        </div>
+        <a href="#!">
+          <ul class="arcodian">
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </a>
+        <ul class="gnb">
+          <li>
+            <a href="#!"> 로그인 </a>
+          </li>
+          <li>
+            <a href="#!"> 회원가입 </a>
+          </li>
+          <li>
+            <a href="#!"> 마이페이지 </a>
+          </li>
+          <li>
+            <a href="#!"> 고객센터 </a>
+          </li>
+          <li>
+            <button class="brand_btn">가맹문의</button>
+          </li>
+        </ul>
+        <ul class="lnb">
+          <li>
+            <a href="#!"> Menu </a>
+          </li>
+          <li>
+            <a href="#!"> Membership </a>
+          </li>
+          <li>
+            <a href="#!"> Event </a>
+          </li>
+          <li>
+            <a href="#!"> Store </a>
+          </li>
+          <li>
+            <a href="#!"> Brand </a>
+          </li>
+          <li>
+            <a href="#!"> Customer </a>
+          </li>
+        </ul>
+      </header>
+      <div class="inside_menuList">
+        <ul class="inside_menu">
+          <li>
+            <a href="./sub.html"> 신메뉴 </a>
+          </li>
+          <li>
+            <a href="./sub.html"> 음료 </a>
+          </li>
+          <li>
+            <a href="./sub.html"> 푸드 </a>
+          </li>
+          <li>
+            <a href="./sub.html"> MD </a>
+          </li>
+        </ul>
+        <ul class="inside_menu">
+          <li>
+            <a href="#1"> 할리스카드 </a>
+          </li>
+          <li>
+            <a href="#1"> 스마트오더 </a>
+          </li>
+          <li>
+            <a href="#1"> 멤버십 </a>
+          </li>
+        </ul>
+        <ul class="inside_menu">
+          <li>
+            <a href="#1">이벤트</a>
+          </li>
+          <li>
+            <a href="#1">뉴스</a>
+          </li>
+        </ul>
+        <ul class="inside_menu">
+          <li>
+            <a href="#!">매장찾기</a>
+          </li>
+          <li>
+            <a href="#!">케이터링/커피트럭</a>
+          </li>
+        </ul>
+        <ul class="inside_menu">
+          <li>
+            <a href="#!">브랜드 스토리</a>
+          </li>
+          <li>
+            <a href="#!">원두소개</a>
+          </li>
+          <li>
+            <a href="#!">BI소개</a>
+          </li>
+        </ul>
+        <ul class="inside_menu">
+          <li>
+            <a href="#!">본사 위치</a>
+          </li>
+          <li>
+            <a href="#!">채용 안내</a>
+          </li>
+          <li>
+            <a href="#!">가맹문의 및 절차</a>
+          </li>
+          <li>
+            <a href="#!">창업설명회</a>
+          </li>
+          <li>
+            <a href="#!">상담신청</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="subBanner_img">
+        <div class="bread_corner">
+          <div class="banner_inner">
+            <div class="bread_crum">
+              <span>HOME</span>
+              >
+              <span>MENU</span>
+              >
+              <span>MD</span>
+              >
+              <span>텀블러</span>
+            </div>
+          </div>
+        </div>
+        <div class="background_shadow">
+          <div class="Menu_title">
+            <p>HOLLYS_MD</p>
+            <p class="shorts">할리스의 전용굿즈와 커피제품 공간</p>
+          </div>
+        </div>
+      </div>
+      <!--subBanner-->
+      <div class="wrap">
+        <div class="wildLayer">
+          <div class="MDintro">
+            <div class="MDkind">텀블러</div>
+            <div class="titleBox">
+              <h2>핸디 라운드 텀블러 (고구마요정 춘식)</h2>
+              <p class="productEng">
+                HANDY ROUND TUMBLER (SWEET POTATO FAIRY CHUNSIK)
+              </p>
+              <hr />
+              <p class="shortInfo">
+                튼튼한 스테인리스 316 소재와 완전 밀폐 구조로
+              </p>
+              <p>샘 걱정 없이 오래 사용하는 데일리 텀블러</p>
+            </div>
+            <div class="titleBox secondTitle">
+              <div class="itemSize">
+                <span class="leftWord">용량</span>
+                <span class="rightWord">550ml</span>
+              </div>
+              <div class="secondCalc">
+                <p class="leftWord">수량</p>
+                <div class="amountBtn">
+                  <div class="sub calcBox">-</div>
+                  <input
+                    type="number"
+                    class="countNum"
+                    min="1"
+                    value="1"
+                    readonly
+                  />
+                  <div class="add calcBox">+</div>
+                </div>
+              </div>
+              <div class="rightTotal">
+                <div class="priceBox">
+                  <p class="choseNum">
+                    총 수량: <span class="totalNum">1개</span>
+                  </p>
+                  <span class="resultSum">결제금액:</span>
+                  <span class="totalSum">14,900원</span>
+                </div>
+              </div>
+              <div class="allBtns">
+                <div class="wishGift insideGift">
+                  <button class="wish">
+                    <i class="fa-solid fa-heart" style="color: #ba000d"></i>
+                    찜하기
+                  </button>
+                  <button class="gift">
+                    <i class="fa-solid fa-gift"></i>
+                    선물하기
+                  </button>
+                </div>
+                <button class="buyBtn">교환권 구매하기</button>
+              </div>
+            </div>
+          </div>
+          <!--MDIntro-->
+
+          <div class="MDphoto">
+            <img src="./images/newMD08.png" alt="MD상품 이미지" />
+          </div>
+        </div>
+        <div class="wishGift">
+          <button class="wish">
+            <i class="fa-solid fa-heart" style="color: #ba000d"></i>
+            찜하기
+          </button>
+          <button class="gift">
+            <i class="fa-solid fa-gift"></i>
+            선물하기
+          </button>
+        </div>
+        <!--MDphoto-->
+
+        <div class="MDitem_detailImg">
+          <img src="./images/detailitemImg.jfif" alt="상세 이미지01" />
+          <div class="gradient-overlay"></div>
+          <button class="detailMore_btn">
+            <span class="btnTxt">자세히 보기</span>
+            <i class="fa-solid fa-angle-down"></i>
+          </button>
+        </div>
+      </div>
+      <!--MDdetailImg-->
+
+      <div class="infoWarning">
+        <div class="infoTitle">상품정보</div>
+        <div class="itemInfo">
+          <p>제품명 핸디 라운드 텀블러(고구마요정 춘식/초코요정 춘식)</p>
+          <p>재질 본체 스테인리스제(내병-STS 316L, 외장-STS 304)/</p>
+          <p class="set">뚜껑-폴리프로필렌(PP), 고무제(실리콘고무)/</p>
+          <p class="set">손잡이-폴리프로필렌(PP), TPE</p>
+          <p>
+            판매원 (주)케이지에프앤비/서울특별시 중구 통일로 92 케이지타워 2층
+          </p>
+          <p>제조위탁자 (주)락앤락(중국위탁생산)</p>
+          <p>수입원 (주)락앤락/경기도 안성시 공도읍 승진길승진길 106-7</p>
+          <p>원산지 중국</p>
+          <div class="telBox">
+            <p>반품 및 교환 구입처 및 판매원(Tel.02-2188-7100)</p>
+            <p>
+              ·본 제품은 공정거래위원회 고시 소비자분쟁해결기준에 의거 교환 또는
+              보상 받으실 수 있습니다.
+            </p>
+            <p>
+              ·동봉된 제품설명서(취급주의서)를 반드시 확인 바라며, 표시된 사용
+              용도 외에는 사용하지 마십시오.
+            </p>
+          </div>
+        </div>
+        <div class="infoTitle">주의사항</div>
+        <div class="itemInfo caution">
+          <p>
+            · 전자레인지, 냉동실, 가스레인지, 오븐, 식기세척기 등에 보관 및
+            사용이 불가합니다.
+          </p>
+          <p>
+            · 반드시 손 세척하시고 부드러운 스펀지를 사용해주시기 바랍니다. 철
+            수세미, 거친 솔 사용 시 제품이 손상될 수 있습니다.
+          </p>
+          <p>
+            · 식기용 중성세제로 세척해주시기 바랍니다. 과탄산소다, 구연산, 식초
+            등 산성이 강한 제품으로 세척 시 제품의 코팅이 손상될 수 있습니다.
+          </p>
+          <p>
+            · 살균, 소독 목적으로 끓는 물에 삶거나 일탕 시에는 제품 변형, 변색
+            등 안전상의 문제가 발생할 수 있으니 주의 바랍니다.
+          </p>
+          <p>
+            · 세척 후에는 제품 내부까지 완전히 건조 후 보관 또는 사용하시기
+            바랍니다.
+          </p>
+          <p>
+            · 국이나 수프 등의 염분이 있는 음식물을 보관하지 마시기 바랍니다.
+            부식의 원인이 될 수 있습니다.
+          </p>
+          <p>
+            · 유제품이나, 과즙 등 부패하기 쉬운 음료를 장시간 보관하지 마시기
+            바랍니다. 세균 번식의 위험 및 부패/변질의 원인이 될 수 있습니다.
+          </p>
+          <p>
+            · 장시간 음료를 보관하거나 사용 후 세척을 오랫동안 하지 않으면
+            착색되거나 냄새가 벨 수 있습니다.
+          </p>
+          <p>
+            · 뜨거운 음료를 담아 둘 때는 화상 또는 부상의 위험이 있으므로
+            영·유아의 손에 닿지 않는 곳에 두십시오.
+          </p>
+          <p>
+            · 탄산·바료 음료 및 고온의 음료를 가득 담을 경우, 내부 입력 상승으로
+            인해 뚜껑이 튀거나 내용물이 분출될 수 있습니다.
+          </p>
+          <p>· 텀블러 밀폐 시 90 °C이하의 음료를 담는 것을 권장합니다.</p>
+          <p>
+            · 손잡이 부분을 잡고 강하게 흔들면 제품이 파손될 수 있으니
+            주의하시기 바랍니다.
+          </p>
+          <p>
+            · 텀블러는 완전 밀폐형이 아니기 때문에 가방에 넣으면 음료사 셀 수
+            있으니 주의하시기 바랍니다.
+          </p>
+          <p>
+            · 내/외부 표면에 충격을 줄 경우 제품 파손, 표면 벗겨짐, 변색 또는
+            성능 저하 등의 문제가 발생될 수 있으니 취급 시 주의하시기 바랍니다.
+          </p>
+          <p>
+            · 핸드크림, 로션 등에 포함된 성분에 의해 도장 벗겨짐이 발생할 수
+            있습니다.
+          </p>
+          <p>
+            · 부속품(뚜껑 등)은 별도로 판매되지 않으니 사용 및 보관에 주의하시기
+            바랍니다.
+          </p>
+          <p>· 제품의 변형, 파손된 경우 즉시 사용을 중지하시기 바랍니다.</p>
+        </div>
+        <div class="infoTitle">환불/교환정보</div>
+        <div class="itemInfo caution">
+          <p>
+            <span class="leftWord">판매자 지정택배사</span>
+            <span class="rightWord">CJ대한통운</span>
+          </p>
+          <span class="leftWord">반품배송비</span>
+          <span class="rightWord"
+            >편도 3,000원 (최초 배송비 무료인 경우 6,000원 부과)</span
+          >
+          <p>교환배송비 6,000원</p>
+          <p>
+            <span class="leftWord">보내실 곳</span>
+            <span class="rightWord"
+              >경기도 동탄물류로 48 B2F B02도크 반품존 (우: 18494)</span
+            >
+          </p>
+          <div class="timeline">
+            <p class="leftWord">반품/교환 사유에 따른 요청 가능 기간</p>
+            <span>구매자 단순 변심은 상품 수령 후 7일 이내</span>
+            <span class="exception">(구매자 반품배송비 부담)</span>
+            <p>
+              표시/광고와 상이, 계약 내용과 다르게 이행된 경우 상품 수령 3개월
+              이내 혹은 표시/광고와 다른 사실을 안 날로부터 30일 이내
+            </p>
+            <p class="exception">(판매자 반품 배송비 부담)</p>
+            <p>둘 중 하나 경과 시 반품/교환 불가</p>
+          </div>
+
+          <div class="refundReason">
+            <p class="refundTitle">반품/교환 불가능 사유</p>
+            <p>1.반품요청기간이 지난 경우</p>
+            <p>2.구매자의 책임 있는 사유로 상품 등이 멸실 또는 훼손된 경우</p>
+            <p class="exception">
+              (단, 상품의 내용을 확인하기 위하여 포장 등을 훼손한 경우는 제외)
+            </p>
+            <span
+              >3.구매자의 책임있는 사유로 포장이 훼손되어 상품 가치가 현저히
+              상쇨된 경우</span
+            >
+            <span class="exception">(예:식품, 화장품, 향수류, 음반 등)</span>
+            <p>
+              4.구매자의 사용 또는 일부 소비에 의하여 상품의 가치가 현저히
+              감소한 경우
+            </p>
+            <p class="exception">
+              (라벨이 떨어진 의류 또는 태그가 떨어진 명품관 상품인 경우)
+            </p>
+            <p>
+              5.시간의 경과에 의하여 재판매가 곤란할 정도로 상품 등의 가치가
+              현저히 감소한 경우
+            </p>
+            <p>6.고객의 요청사항에 맞춰 제작에 들어가는 맞춤제작상품의 경우</p>
+            <p class="exception">
+              (판매자에게 회복불가능한 손해가 예상되고, 그러한 예정으로
+              청약철회권 행사가 불가하다는 사실을 서면 동의 받은 경우)
+            </p>
+            <p>7.복제가 가능한 상품 등의 포장을 훼손한 경우</p>
+            <p class="exception">
+              (판매자에게 회복불가능한 손해가 예상되고, 그러한 예정으로
+              청약철회권 행사가 불가하다는 사실을 서면 동의 받은 경우)
+            </p>
+          </div>
+        </div>
+        <hr />
+      </div>
+
+      <div class="recommendation">
+        <div class="title_more">
+          <p>관련 MD상품</p>
+          <div class="moreBtn">MORE></div>
+        </div>
+        <ul class="otherMD">
+          <li>
+            <a href="#!">
+              <img src="./images/newMD07.png" alt="MD상품 이미지02" />
+              <div class="MDitemName">
+                <p class="itemName">핸디 라운드 텀블러 (초코요정 춘식)</p>
+                <p class="itemNameEng">
+                  HANDY ROUND TUMBLER (CHOCO FAIRY CHUNSIK)
+                </p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#!">
+              <img src="./images/newMD10.png" alt="MD상품 이미지02" />
+              <div class="MDitemName">
+                <p class="itemName">시그니처팝 텀블러 (초코요정 춘식)</p>
+                <p class="itemNameEng">
+                  SIGNATURE POP TUMBLER (CHOCO FAIRY CHUNSIK)
+                </p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#!">
+              <img src="./images/newMD11.png" alt="MD상품 이미지02" />
+              <div class="MDitemName">
+                <p class="itemName">실리콘 핸들 티 텀블러 (요정 춘식)</p>
+                <p class="itemNameEng">
+                  SILICONE HANDLE TEA TUMBLER (FAIRY CHUNSIK)
+                </p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#!">
+              <img src="./images/newMD09.png" alt="MD상품 이미지02" />
+              <div class="MDitemName">
+                <p class="itemName">밴딩 슬리브 텀블러 (초코요정 춘식)</p>
+                <p class="itemNameEng">
+                  BENDING SLEEVE TUMBLER (CHOCO FAIRY CHUNSIK)
+                </p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#!">
+              <img src="./images/subMD01.png" alt="MD상품 이미지02" />
+              <div class="MDitemName">
+                <p class="itemName">더 가벼운 텀블러(퍼플)</p>
+                <p class="itemNameEng">THE LIGHT TUMBLER(PURPLE)</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#!">
+              <img src="./images/subMD02.png" alt="MD상품 이미지02" />
+              <div class="MDitemName">
+                <p class="itemName">더 가벼운 텀블러(브라운)</p>
+                <p class="itemNameEng">THE LIGHT TUMBLER(BROWN)</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#!">
+              <img src="./images/subMD03.png" alt="MD상품 이미지02" />
+              <div class="MDitemName">
+                <p class="itemName">더 가벼운 텀블러(네이비)</p>
+                <p class="itemNameEng">THE LIGHT TUMBLER(NAVY)</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#!">
+              <img src="./images/subMD04.png" alt="MD상품 이미지02" />
+              <div class="MDitemName">
+                <p class="itemName">더 가벼운 텀블러(카키)</p>
+                <p class="itemNameEng">THE LIGHT TUMBLER (KHAKI)</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#!">
+              <img src="./images/subMD09.png" alt="MD상품 이미지02" />
+              <div class="MDitemName">
+                <p class="itemName">롤업 실리콘 텀블러 (레드)</p>
+                <p class="itemNameEng">ROLL UP SILICONE TUMBLER (RED)</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#!">
+              <img src="./images/subMD10.png" alt="MD상품 이미지02" />
+              <div class="MDitemName">
+                <p class="itemName">롤업 실리콘 텀블러 (화이트)</p>
+                <p class="itemNameEng">ROLL UP SILICONE TUMBLER (WHITE)</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#!">
+              <img src="./images/subMD21.png" alt="MD상품 이미지02" />
+              <div class="MDitemName">
+                <p class="itemName">스포티 텀블러 (크림화이트)</p>
+                <p class="itemNameEng">SPORTY TUMBLER (CREAM WHITE)</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#!">
+              <img src="./images/subMD22.png" alt="MD상품 이미지02" />
+              <div class="MDitemName">
+                <p class="itemName">스포티 텀블러 (블랙)</p>
+                <p class="itemNameEng">SPORTY TUMBLER (BLACK)</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#!">
+              <img src="./images/subMD31.png" alt="MD상품 이미지02" />
+              <div class="MDitemName">
+                <p class="itemName">더 가벼운 텀블러(크림)</p>
+                <p class="itemNameEng">THE LIGHT TUMBLER (CREAM)</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#!">
+              <img src="./images/subMD32.png" alt="MD상품 이미지02" />
+              <div class="MDitemName">
+                <p class="itemName">더 가벼운 텀블러(레드)</p>
+                <p class="itemNameEng">THE LIGHT TUMBLER (RED)</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#!">
+              <img src="./images/subMD34.png" alt="MD상품 이미지02" />
+              <div class="MDitemName">
+                <p class="itemName">비비드팝 텀블러(민트)</p>
+                <p class="itemNameEng">VIVIDPOP TUMBLER (MINT)</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#!">
+              <img src="./images/subMD35.png" alt="MD상품 이미지02" />
+              <div class="MDitemName">
+                <p class="itemName">비비드팝 텀블러(핑크)</p>
+                <p class="itemNameEng">VIVIDPOP TUMBLER (PINK)</p>
+              </div>
+            </a>
+          </li>
+          <div class="insideBtn leftBtn">
+            <i class="fa-solid fa-angle-left"></i>
+          </div>
+          <div class="insideBtn rightBtn">
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+        </ul>
+        <div class="check">
+          <div class="on"></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+
+      <div class="buyLine" data-price="14900">
+        <div class="choseNum">주문수량</div>
+        <div class="align">
+          <div class="amountBtn">
+            <div class="sub calcBox">-</div>
+            <input type="number" class="countNum" min="1" value="1" readonly />
+            <div class="add calcBox">+</div>
+          </div>
+          <div class="priceBox">
+            <p>총 수량: <span class="totalNum">1</span></p>
+            <span>총 금액:</span>
+            <span class="totalSum">14,900원</span>
+          </div>
+          <div class="wishGift anotherGift">
+            <button class="wish">
+              <i class="fa-solid fa-heart" style="color: #ba000d"></i>
+              찜하기
+            </button>
+            <button class="gift">
+              <i class="fa-solid fa-gift"></i>
+              선물하기
+            </button>
+          </div>
+          <button class="buyBtn">교환권 구매하기</button>
+        </div>
+      </div>
+    </div>
+
+    <a href="#headerTop" class="top_menu">
+      <i class="fa-solid fa-arrow-up"></i>
+      <p class="top">TOP</p>
+    </a>
+
+    <div class="footer_outer">
+      <footer class="footer">
+        <div class="company_policy">
+          <p>개인정보처리방침 서비스이용약관 멤버십이용약관</p>
+        </div>
+        <div class="company_policy">
+          <p>할리스카드이용약관 고객문의 사이트맵 BI 소개</p>
+        </div>
+        <div class="company_location">
+          <p>
+            법인명: (주)케이지에프앤비 대표자: 윤석찬 사업자등록번호
+            211-87-61044 통신판매업: 제2019-서울종로-0193호 <br />
+            주소 : 서울특별시 중구 통일로 92, 9층(순화동, 케이지타워) 대표전화 :
+            02-2188-7100 (가맹문의 : 02-6350-7229)
+          </p>
+          <p>COPYRIGHT (C) KG F&B. All Rights Reserved.</p>
+        </div>
+        <ul class="sns_list">
+          <li>
+            <a href="https://www.instagram.com/official_hollys/?hl=ko">
+              <img src="./images/insta_sns.png" alt="인스타 이미지" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/EnjoyHollys/?locale=ko_KR">
+              <img
+                src="./images/free-icon-facebook-3670032.png"
+                alt="페이스북 이미지"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/c/HollysCoffeeKorea/videos">
+              <img
+                src="./images/free-icon-youtube-3670147.png"
+                alt="유튜브 이미지"
+              />
+            </a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+  </body>
+</html>
