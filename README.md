@@ -295,3 +295,176 @@ let currentMenu = document.querySelector(".menuImg_list.on");
 ✏️ currentCount: 현재 보여지고 있는 상품 개수<br />
 ✏️ showCount: 한 번에 보여줄 상품 개수<br />
 ✏️ currentMenu: 현재 선택된 메뉴 리스트<br />
+<br />
+
+```javascript
+function getCurrentMenu() {
+  return document.querySelector(".menuImg_list.on");
+}
+```
+📝 현재 선택된 메뉴 리스트(.on)를 가져오는 함수<br />
+<br />
+
+```javascript
+function getShowCount() {
+  const width = window.innerWidth;
+
+  if (width < 768) return 8;
+  if (width < 1024) return 9;
+  return 12;
+}
+```
+📝현재 화면 크기에 따라 보여줄 상품 개수를 결정하는 함수<br />
+✏️모바일 (<768px)	8개<br />
+✏️타블렛 (768~1023px)	9개<br />
+✏️PC (1024px 이상)	12개<br />
+
+```javascript
+function showMenuItems(reset = false) {
+```
+📝 상품을 실제로 화면에 보여주는 함수<br />
+
+
+```javascript
+ const items = currentMenu.querySelectorAll("li");
+```
+✏️ 현재 메뉴 안에 있는 모든 상품 li 요소를 가져옵니다.<br />
+
+```javascript
+if (reset) currentCount = 0;
+```
+✏️ reset이 true이면<br />
+👉 현재 보여준 개수를 0으로 초기화<br />
+
+💡 메뉴를 바꿀 때 필요<br />
+
+```javascript
+const nextCount = currentCount + showCount;
+```
+📝 다음에 보여줄 개수 계산<br />
+
+✏️현재 8개 보여졌고 showCount가 8이면<br />
+👉 다음에 16개까지 보여주기<br />
+
+```javascript
+items.forEach((item, index) => {
+  if (index < nextCount) {
+    item.style.display = "block";
+  }
+});
+```
+📝 실제 상품 표시<br />
+
+상품 리스트를 반복하면서<br />
+
+✏️index < nextCount 인 상품만<br />
+✏️display: block으로 보여줍니다.<br />
+
+```javascript
+currentCount = nextCount;
+```
+✏️ 현재 표시 개수 업데이트<br />
+
+```javascript
+if (currentCount >= items.length) {
+  moreBtn.style.display = "none";
+} else {
+  moreBtn.style.display = "block";
+}
+```
+모든 상품이 다 보여지면
+👉 더보기 버튼 숨김
+
+아직 남아있으면
+👉 버튼 계속 표시
+
+```javascript
+showMenuItems(true);
+```
+📝 첫 화면 초기 표시<br />
+
+페이지가 처음 열릴 때<br />
+
+✏️ reset = true<br />
+✏️ 초기 개수만 보여줌<br />
+
+```javascript
+moreBtn.addEventListener("click", () => {
+  showMenuItems();
+});
+```
+
+더보기 버튼을 누르면<br />
+
+👉 showMenuItems() 실행<br />
+👉 다음 상품들이 추가로 표시됨<br />
+
+```javascript
+document.querySelectorAll(".menu_list li").forEach((menu) => {
+```
+✏️ 각 메뉴 버튼에 클릭 이벤트를 추가<br />
+
+```javascript
+document.querySelector(".menu_list li.on").classList.remove("on");
+```
+✏️ 기존 선택 메뉴 제거<br />
+
+```javascript
+menu.classList.add("on");
+```
+✏️ 클릭한 메뉴 활성화<br />
+
+```javascript
+document.querySelector(".menuImg_list.on").classList.remove("on");
+currentMenu = document.querySelector(`.${menu.dataset.menu}`);
+currentMenu.classList.add("on");
+```
+✏️ 메뉴 버튼의 data-menu 값을 이용해<br />
+✏️ 해당 메뉴 이미지 리스트를 표시합니다.<br />
+
+ex)<br />
+  <li data-menu="newMenu" class="on">신메뉴</li><br />
+→ .newMenu 리스트 표시<br />
+
+```javascript
+document
+  .querySelectorAll(".filter_check input")
+  .forEach((i) => (i.checked = false));
+```
+메뉴 변경 시<br />
+👉 필터 체크 상태 초기화<br />
+
+```javascript
+showCount = getShowCount();
+showMenuItems(true);
+```
+새 메뉴 기준으로<br />
+
+👉 보여줄 개수 다시 계산<br />
+👉 상품 다시 표시<br />
+
+```javascript
+window.addEventListener("resize", () => {
+  showCount = getShowCount();
+});
+```
+브라우저 크기가 바뀌면<br />
+👉 보여줄 개수 다시 계산<br />
+
+📑 전체 동작 흐름 정리<br />
+<br />
+🎈 화면 크기 확인 → 보여줄 개수 결정<br />
+🎈 첫 화면에서 상품 일부만 표시<br />
+🎈 더보기 클릭 → 상품 추가 표시<br />
+🎈 모든 상품 표시 시 버튼 숨김<br />
+🎈 메뉴 변경 시 상품 초기화<br />
+🎈 화면 크기 변경 시 표시 개수 재계산<br />
+
+🌟window.innerWidth → 반응형 동작 제어<br />
+🌟currentCount 상태 관리 → 현재 표시 개수<br />
+🌟display 조작 → 상품 노출 제어<br />
+🌟dataset 활용 → 메뉴와 콘텐츠 연결<br />
+🌟resize 이벤트 대응 → 화면 변경 대응<br />
+
+window.innerWidth를 활용하여 화면 크기에 따라 상품 노출 개수를 다르게 설정하고,<br />
+“더보기” 버튼 클릭 시 currentCount 상태를 관리하여 상품 리스트를 점진적으로 표시하는 반응형 UI 기능을 구현했습니다.<br />
