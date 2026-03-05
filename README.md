@@ -55,7 +55,7 @@ const totalSlides = slides.length;
 const firstClone = slides[0].cloneNode(true);
 slider.appendChild(firstClone);
 ```
-<h5>💡무한 슬라이드를 (클론 추가)</h5>
+<h5>💡무한 슬라이드(클론 추가)</h5>
 
 ✏️첫 번째 슬라이드를 복제해서<br />
 ✏️맨 뒤에 붙임<br />
