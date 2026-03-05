@@ -1,10 +1,12 @@
 # ☕ 할리스 리뉴얼 반응형 사이트 (팀/개인)
- 
+: PC / Tablet / Mobile 환경에서 사용할 수 있도록 반응형 레이아웃을 적용했으며,
+JavaScript와 GSAP을 활용해 스크롤 기반 인터랙션과 상품 구매 UI 기능을 구현했습니다.
+
 ## 🛠 사용 기술
 - HTML5
-- Sass
-- JavaScript
-- Gsap
+- CSS3 / SCSS
+- JavaScript (ES6)
+- GSAP ScrollTrigger
   
 ## 📂 페이지 구성
 - 메인 페이지 (모바일/타블렛/PC)
@@ -546,7 +548,7 @@ moreBtn.style.display = "none";
 ```
 👉 필터가 적용된 상태에서는 더보기 버튼을 사용하지 않도록 숨김
 
-```javascript
+``` 
 document.querySelectorAll(".filter_check input").forEach((input) => {
   input.addEventListener("change", applyFilter);
 });
@@ -575,7 +577,7 @@ document.querySelectorAll(".filter_check input").forEach((input) => {
 <img width="552" height="497" alt="디테일스크롤02" src="https://github.com/user-attachments/assets/697d3016-182e-4dac-9c45-58e6edef2503" /><br />
 <img width="566" height="594" alt="디테일스크롤03" src="https://github.com/user-attachments/assets/87b9429d-b056-449b-b641-3b0ae985bb5f" /><br />
 
-```javascript
+``` 
 // 페이지 상단에서 400px 이상 스크롤 시 구매 영역 표시
 gsap.to(buyLine, {
   opacity: 1,
@@ -599,12 +601,104 @@ gsap.to(buyLine, {
   },
 });
 ```
-✏️ 스크롤 위치에 따라 구매 UI가 자연스럽게 등장/숨김 처리되도록 구현
+✏️ 스크롤 위치에 따라 구매 UI가 자연스럽게 등장/숨김 처리되도록 구현 
 
 ```
 <div class="buyLine" data-price="14900">
 -> const price = Number(line.dataset.price);
 ```
-✏️ 상품 가격을 HTML의 data-price 속성을 통해 가져오도록 구성
-✏️ JavaScript에서 data-price으로 가격 데이터를 사용
+✏️ 상품 가격을 HTML의 data-price 속성을 통해 가져오도록 구성<br />
+✏️ JavaScript에서 data-price으로 가격 데이터 사용<br />
 
+```
+const buyLines = document.querySelectorAll('.buyLine');
+buyLines.forEach((line) => {
+```
+✏️  페이지에 동일한 구매 UI가 여러 개 있을 수 있기 때문에<br />
+querySelectorAll을 사용해 각 요소를 반복 처리하도록 구현<br />
+
+```
+function update() {
+  const count = Number(input.value);
+  totalNum.textContent = count;
+  totalSum.textContent = (price * count).toLocaleString() + '원';
+}
+```
+✏️ 수량이 변경될 때마다 총 수량과 총 가격을 업데이트하는 함수<br />
+✏️ 총 가격이 개수 증가수 * 가격으로 반환<br />
+✏️ toLocaleString()을 사용하여 가격에 천 단위 콤마가 자동 적용<br />
+
+```
+// 수량 증가버튼
+addBtn.addEventListener('click', () => {
+  input.value = Number(input.value) + 1;
+  update();
+});
+
+// 수량 감소버튼
+subBtn.addEventListener('click', () => {
+  if(input.value > 1){
+    input.value = Number(input.value) - 1;
+    update();
+  }
+});
+```
+✏️ 버튼 클릭 시 수량이 변경되고, update() 함수를 호출하여 가격이 다시 계산<br />
+✏️ 수량 감소 시에는 1 이하로 내려가지 않도록 제한<br />
+
+📑 전체 동작 흐름 정리<br />
+<br />
+🎈GSAP ScrollTrigger를 활용한 스크롤 기반 UI 인터랙션 구현<br />
+🎈dataset를 활용한 상품 가격 관리<br />
+🎈이벤트 기반 수량 변경 및 총 가격 자동 계산<br />
+🎈동일한 구조의 UI 반복 처리 구조 구현<br />
+
+사용자 스크롤 흐름에 맞춰 GSAP의 ScrollTrigger를 사용하여 특정 스크롤 위치에 도달하면 요소의 opacity가 변경되도록 설정했습니다.<br />
+상품 상세 페이지에서 자연스럽게 구매 행동으로 이어지도록 구성했습니다.<br />
+
+🚀 트러블 슈팅<br />
+1️⃣ 메인 배너 슬라이드 구현 문제<br />
+
+할리스 반응형 사이트 구현 중, 가장 기억에 남는 문제는 메인 배너 슬라이드였습니다.<br />
+처음 구현할 때 offset을 사용해 너비를 계산했더니 첫 번째 배너 이미지만 보이고, 다음 이미지는 백지로 나타나는 현상이 발생했고,<br />
+마지막 슬라이드에서는 뚝뚝 끊기는 문제와 첫 번째 슬라이드로 돌아갈 때 뒤로 재생되는 현상도 있었습니다.<br />
+
+* 너비 계산 문제<br />
+
+처음에는 offsetWidth로 슬라이드 너비를 계산했으나, margin과 border가 포함되지 않아 실제 화면에 맞는 스크롤 위치 계산이 안 됨.<br />
+해결: scrollWidth와 slider.clientWidth를 활용하여 실제 스크롤 가능한 전체 너비와 현재 보이는 영역 너비를 기준으로 슬라이드 위치를 계산.<br />
+
+* 현재 슬라이드 위치 추적 문제<br />
+
+여러 슬라이드 중 어떤 것이 화면에 가장 가까운지 정확하게 계산할 필요가 있었음.<br />
+해결: 아래 코드로 화면과 가장 가까운 슬라이드 index를 계산했습니다.<br />
+
+```
+let closestIndex = 0;
+let minDistance = Infinity;
+
+slides.forEach((slide, index) => {
+  const distance = Math.abs(slide.offsetLeft - slider.scrollLeft);
+
+  if (distance < minDistance) {
+    minDistance = distance;
+    closestIndex = index;
+  }
+});
+
+if (closestIndex !== currentPage) {
+  currentPage = closestIndex;
+  updateCurrentPage(currentPage);
+}
+```
+Infinity는 처음 최소값을 비교할 때 사용되었습니다.<br />
+처음엔 어떤 값도 없기 때문에, 무한대부터 시작해서 실제 거리(distance)가 더 작으면 갱신하는 방식입니다.<br />
+이렇게 하면 스크롤 위치와 가장 가까운 슬라이드를 정확하게 찾을 수 있습니다.<br />
+
+scrollWidth와 slider.clientWidth가 슬라이드 구현에서 가장 핵심적인 메서드라는 점을 체감했습니다.
+scrollWidth: 내부 컨텐츠 전체 너비 (margin 포함 여부는 브라우저 차이가 있음)
+clientWidth: 보이는 영역 너비 (padding 포함, scrollbar 제외)
+화면에 가장 가까운 슬라이드를 계산하고 현재 페이지를 업데이트하는 로직을 이해하면서,
+단순히 offset만으로는 UI 동작이 완벽하지 않다는 점을 배웠습니다.
+
+결과적으로 스크롤 기반 슬라이드 구현 원리와 위치 계산 로직을 몸으로 익히는 계기가 되었습니다.
