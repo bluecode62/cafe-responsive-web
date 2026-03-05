@@ -575,3 +575,36 @@ document.querySelectorAll(".filter_check input").forEach((input) => {
 <img width="552" height="497" alt="디테일스크롤02" src="https://github.com/user-attachments/assets/697d3016-182e-4dac-9c45-58e6edef2503" /><br />
 <img width="566" height="594" alt="디테일스크롤03" src="https://github.com/user-attachments/assets/87b9429d-b056-449b-b641-3b0ae985bb5f" /><br />
 
+```javascript
+// 페이지 상단에서 400px 이상 스크롤 시 구매 영역 표시
+gsap.to(buyLine, {
+  opacity: 1,
+  duration: 0.3,
+  scrollTrigger: {
+    trigger: document.body,
+    start: "top -400",
+    toggleActions: "play reverse play reverse",
+  },
+});
+
+// MD상품 영역(recommendation)이 나타나면 구매 영역 다시 숨김
+gsap.to(buyLine, {
+  opacity: 0,
+  duration: 0.3,
+  scrollTrigger: {
+    trigger: ".recommendation",
+    start: "top bottom",
+    end: "bottom top",
+    toggleActions: "play reverse play reverse",
+  },
+});
+```
+✏️ 스크롤 위치에 따라 구매 UI가 자연스럽게 등장/숨김 처리되도록 구현
+
+```
+<div class="buyLine" data-price="14900">
+-> const price = Number(line.dataset.price);
+```
+✏️ 상품 가격을 HTML의 data-price 속성을 통해 가져오도록 구성
+✏️ JavaScript에서 data-price으로 가격 데이터를 사용
+
