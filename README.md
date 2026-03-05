@@ -14,7 +14,7 @@
 ## ✨ 주요 기능
 1. 메인배너 슬라이드 – 메인 페이지 (index.html)
 2. 반응형 가로 스크롤 메뉴  – 메인 페이지 (index.html)/디테일 페이지 (detail.html)
-3. 반응형 메뉴버튼 – 서브 페이지 (sub.html)
+3. 반응형 세로 더보기 버튼 – 서브 페이지 (sub.html)
 4. 메뉴 필터링 – 서브 페이지 (sub.html)
 5. 스크롤 기반 구매바 노출 – 디테일 페이지 (detail.html)
 
@@ -272,5 +272,25 @@ activeMenu.scrollLeft -= slideWidth * moveCount;
 🎈 window.innerWidth 활용<br />
 🎈 scrollLeft 기반 가로 스크롤<br />
 🎈 반응형 레이아웃과 스크롤 동기화<br />
-
+<br />
 window.innerWidth를 활용하여 화면 크기에 따라 이동할 메뉴 개수를 동적으로 변경하고, scrollLeft를 이용해 반응형 가로 스크롤 메뉴를 구현했습니다.<br />
+
+
+<h1>반응형 세로 더보기 버튼</h1>
+<img width="609" height="1249" alt="moeBtn" src="https://github.com/user-attachments/assets/2438a0e6-2589-42ab-87fb-52fe7b78e051" /><br />
+<br/>
+* window.innerWidth로 반응형 개수 제어<br />
+* 현재 보여준 개수(currentCount) 관리<br />
+* 더보기 클릭 시 추가 노출<br />
+
+```javascript
+const moreBtn = document.querySelector(".more_btn");
+let currentCount = 0;
+let showCount = getShowCount();
+let currentMenu = document.querySelector(".menuImg_list.on");
+```
+📝변수	역할<br />
+✏️ moreBtn: 더보기 버튼<br />
+✏️ currentCount: 현재 보여지고 있는 상품 개수<br />
+✏️ showCount: 한 번에 보여줄 상품 개수<br />
+✏️ currentMenu: 현재 선택된 메뉴 리스트<br />
