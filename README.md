@@ -422,9 +422,8 @@ currentMenu.classList.add("on");
 ✏️ 메뉴 버튼의 data-menu 값을 이용해<br />
 ✏️ 해당 메뉴 이미지 리스트를 표시합니다.<br />
 
-ex)<br />
-  <li data-menu="newMenu" class="on">신메뉴</li><br />
-→ .newMenu 리스트 표시<br />
+ex)data-menu="coffee"<br />
+👉 .coffee 리스트 표시<br />
 
 ```javascript
 document
