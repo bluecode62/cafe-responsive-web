@@ -266,7 +266,7 @@ activeMenu.scrollLeft -= slideWidth * moveCount;
 <h5>왼쪽 버튼 클릭 시 스크롤 이동</h5><br />
 ✏️ 동일한 방식으로 scrollLeft 값을 감소시켜 반대 방향으로 이동합니다.<br />
 * activeMenu.scrollLeft -= slideWidth * moveCount; <- '-'로 빼서 뒤로 이동<br />
-
+<br />
 📑 전체 동작 흐름 정리<br />
 
 🎈 window.innerWidth 활용<br />
