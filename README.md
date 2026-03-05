@@ -529,6 +529,43 @@ item.style.display = "block";
 currentMenu.querySelector("ul").appendChild(item);
 }
 ```
-✏️ 모든 상품을 하나씩 검사.
-✏️ 체크된 필터와 상품 필터가 같으면 표시
-✏️ 필터가 같으면 상품 표시
+✏️ 모든 상품을 하나씩 검사.<br />
+✏️ 체크된 필터와 상품 필터가 같으면 표시<br />
+✏️ 필터가 같으면 상품 표시<br />
+
+
+💡상품 순서 재정렬
+```javascript
+currentMenu.querySelector("ul").appendChild(item);
+```
+👉 필터된 상품들을 리스트 안에서 다시 정렬<br />
+👉 조건에 맞는 상품을 리스트 맨 뒤로 이동(appendChild())<br />
+
+```javascript
+moreBtn.style.display = "none";
+```
+👉 필터가 적용된 상태에서는 더보기 버튼을 사용하지 않도록 숨김
+
+```javascript
+document.querySelectorAll(".filter_check input").forEach((input) => {
+  input.addEventListener("change", applyFilter);
+});
+```
+👉 각 체크박스에 이벤트를 추가 
+👉 체크 상태가 바뀔 때마다 필터가 실행(체크, 체크해제)
+
+
+📑 전체 동작 흐름 정리<br />
+<br />
+🎈 사용자가 필터 체크<br />
+🎈 change 이벤트 발생<br />
+🎈 applyFilter 함수 실행<br />
+🎈 체크된 필터 값 배열 생성<br />
+🎈 상품 dataset 값과 비교<br />
+🎈 조건 맞는 상품만 표시<br />
+🎈 필터 적용 시 더보기 버튼 숨김<br />
+
+체크박스 상태를 감지하여 선택된 필터 값들을 배열로 생성하고,<br /> 
+각 상품의 data-filter 값과 비교하여 조건에 맞는 상품만 표시하는 필터링 기능을 구현했습니다.<br />
+상품 리스트는 "더보기" 버튼으로 점진적으로 표시되도록 구현했으며, <br />
+필터가 적용된 경우에는 조건에 맞는 상품을 한 번에 표시하도록 설계했습니다. <br />
