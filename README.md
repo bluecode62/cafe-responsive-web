@@ -571,6 +571,7 @@ document.querySelectorAll(".filter_check input").forEach((input) => {
 필터가 적용된 경우에는 조건에 맞는 상품을 한 번에 표시하도록 설계했습니다. <br />
 
 <h1>스크롤 기반 구매창 노출 및 수량계산 기능</h1>
-<img width="578" height="1662" alt="detailScroll" src="https://github.com/user-attachments/assets/8a5ef220-63f6-46eb-a082-64e407e2c4a9" /> <br />
-
+<img width="452" height="520" alt="디테일스크롤01" src="https://github.com/user-attachments/assets/bb49bc26-43e7-4dc8-90e7-4e9a6ed03b20" /><br />
+<img width="552" height="497" alt="디테일스크롤02" src="https://github.com/user-attachments/assets/697d3016-182e-4dac-9c45-58e6edef2503" /><br />
+<img width="566" height="594" alt="디테일스크롤03" src="https://github.com/user-attachments/assets/87b9429d-b056-449b-b641-3b0ae985bb5f" /><br />
 
