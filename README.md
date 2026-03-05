@@ -573,6 +573,4 @@ document.querySelectorAll(".filter_check input").forEach((input) => {
 <h1>스크롤 기반 구매창 노출 및 수량계산 기능</h1>
 <img width="578" height="1662" alt="detailScroll" src="https://github.com/user-attachments/assets/8a5ef220-63f6-46eb-a082-64e407e2c4a9" /> <br />
 
-![detailScroll](https://github.com/user-attachments/assets/60272cd3-70ec-4f3e-bf8b-ff015171f27f)
-
 
