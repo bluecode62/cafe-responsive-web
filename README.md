@@ -16,7 +16,7 @@
 2. 반응형 가로 스크롤 메뉴  – 메인 페이지 (index.html)/디테일 페이지 (detail.html)
 3. 반응형 세로 더보기 버튼 – 서브 페이지 (sub.html)
 4. 체크박스 기반 필터링 – 서브 페이지 (sub.html)
-5. 스크롤 기반 구매바 노출 – 디테일 페이지 (detail.html)
+5. 스크롤 기반 구매창 노출 및 수량계산 기능 – 디테일 페이지 (detail.html)
 
 
 <h1>메인배너 슬라이드</h1>
@@ -569,3 +569,10 @@ document.querySelectorAll(".filter_check input").forEach((input) => {
 각 상품의 data-filter 값과 비교하여 조건에 맞는 상품만 표시하는 필터링 기능을 구현했습니다.<br />
 상품 리스트는 "더보기" 버튼으로 점진적으로 표시되도록 구현했으며, <br />
 필터가 적용된 경우에는 조건에 맞는 상품을 한 번에 표시하도록 설계했습니다. <br />
+
+<h1>스크롤 기반 구매창 노출 및 수량계산 기능</h1>
+<img width="578" height="1662" alt="detailScroll" src="https://github.com/user-attachments/assets/8a5ef220-63f6-46eb-a082-64e407e2c4a9" /> <br />
+
+![detailScroll](https://github.com/user-attachments/assets/60272cd3-70ec-4f3e-bf8b-ff015171f27f)
+
+
