@@ -22,7 +22,7 @@ JavaScript와 GSAP을 활용해 스크롤 기반 인터랙션과 상품 구매 U
 
 
 <h1>메인배너 슬라이드</h1>
-<img width="598" height="2147" alt="bannerSlide" src="https://github.com/user-attachments/assets/c2acce7c-d630-4c3b-9485-e774140d24f7" /><br />
+<img width="598" height="2147" alt="bannerSlide" src="https://github.com/user-attachments/assets/a186f020-da75-4003-81d1-f952c9efe0c7" /><br />
 
 
 * 좌/우 버튼으로 슬라이드 이동<br />
