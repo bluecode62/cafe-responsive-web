@@ -39,10 +39,10 @@ const totalPageEl = document.querySelector(".total_page");
 const slides = document.querySelectorAll(".img_box li");
 const slider = document.querySelector(".img_box ul");
 ```
-✏️버튼 요소 가져오기<br />
-✏️페이지 숫자 표시 요소 가져오기<br />
-✏️슬라이드(li) 목록 가져오기<br />
-✏️실제로 스크롤이 일어나는 ul 요소 가져오기<br />
+✏️(prevBtn, nextBtn) 버튼 요소 가져오기<br />
+✏️(currentPageEl(현재), totalPageEl(전체))페이지 숫자 표시 요소 가져오기<br />
+✏️슬라이드(slides)  == (li) 목록 가져오기<br />
+✏️실제로 스크롤이 일어나는 ul 요소(slider) 가져오기<br />
 
 ```javascript
 let currentPage = 0;
@@ -60,7 +60,6 @@ slider.appendChild(firstClone);
 ✏️첫 번째 슬라이드를 복제해서<br />
 ✏️맨 뒤에 붙임<br />
 👉 마지막 슬라이드 다음으로 자연스럽게 첫 번째 슬라이드로 넘어가는 것처럼 보이게 하기 위해<br />
-
 
 ```javascript
 function updateCurrentPage(index) {
