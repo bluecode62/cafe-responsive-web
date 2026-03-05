@@ -15,7 +15,7 @@
 1. 메인배너 슬라이드 – 메인 페이지 (index.html)
 2. 반응형 가로 스크롤 메뉴  – 메인 페이지 (index.html)/디테일 페이지 (detail.html)
 3. 반응형 세로 더보기 버튼 – 서브 페이지 (sub.html)
-4. 메뉴 필터링 – 서브 페이지 (sub.html)
+4. 체크박스 기반 필터링 – 서브 페이지 (sub.html)
 5. 스크롤 기반 구매바 노출 – 디테일 페이지 (detail.html)
 
 
@@ -467,3 +467,68 @@ window.addEventListener("resize", () => {
 
 window.innerWidth를 활용하여 화면 크기에 따라 상품 노출 개수를 다르게 설정하고,<br />
 “더보기” 버튼 클릭 시 currentCount 상태를 관리하여 상품 리스트를 점진적으로 표시하는 반응형 UI 기능을 구현했습니다.<br />
+
+
+<h1>체크박스 기반 필터링</h1> 
+<img width="616" height="537" alt="filter01" src="https://github.com/user-attachments/assets/0fa5eb66-e58d-4a34-afe7-647133540020" /><br />
+
+* 체크된 checkbox 값 가져오기<br />
+* dataset으로 상품 필터 값 확인<br />
+* 조건에 맞는 상품만 표시<br />
+* 필터 적용 시 더보기 기능 비활성화<br />
+
+```javascript
+function applyFilter() {
+ const currentMenu = getCurrentMenu();
+ const items = currentMenu.querySelectorAll("li");
+```
+📝 체크박스 상태가 변경될 때 실행되는 필터링 함수<br />
+✏️현재 선택된 메뉴 리스트 가져오기<br />
+✏️해당 메뉴 안의 모든 상품(li) 가져오기<br />
+ex)
+.menuImg_list
+  li (상품1)
+  li (상품2)
+  li (상품3)
+
+```javascript
+const checkedValues = Array.from(
+  document.querySelectorAll(".filter_check input:checked"),
+).map((input) => input.value);
+```
+✏️ 현재 체크된 필터 값을 배열로 만드는 코드<br />
+
+```javascript
+Array.from(...)
+```
+✏️querySelectorAll 결과는 NodeList라서<br />
+✏️배열 메서드(map)를 사용하려면 배열로 변환<br />
+
+```javascript
+document.querySelectorAll(".filter_check input:checked"),
+.map((input) => input.value)
+```
+✏️:checked → 체크된 input만 선택<br />
+✏️value 값만 추출<br />
+
+```javascript
+if (checkedValues.length === 0) {
+  showMenuItems(true);
+  return;
+}
+```
+체크된 필터가 하나도 없으면<br />
+
+👉 필터를 적용하지 않고<br />
+👉 기존 상품 리스트 상태로 복구<br />
+
+```javascript
+items.forEach((item) => {
+ if (checkedValues.includes(item.dataset.filter)){
+item.style.display = "block";
+currentMenu.querySelector("ul").appendChild(item);
+}
+```
+✏️ 모든 상품을 하나씩 검사.
+✏️ 체크된 필터와 상품 필터가 같으면 표시
+✏️ 필터가 같으면 상품 표시
