@@ -29,11 +29,11 @@
 * 3초마다 자동 슬라이드
 * 마우스 오버 / 터치 시 자동 슬라이드 일시정지
 
-  ```
+```javascript
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const currentPageEl = document.querySelector(".current_page");
 const totalPageEl = document.querySelector(".total_page");
 const slides = document.querySelectorAll(".img_box li");
 const slider = document.querySelector(".img_box ul");
-  ```
+```
