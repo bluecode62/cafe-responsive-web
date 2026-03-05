@@ -268,7 +268,7 @@ activeMenu.scrollLeft -= slideWidth * moveCount;
 * activeMenu.scrollLeft -= slideWidth * moveCount; <- '-'로 빼서 뒤로 이동<br />
 <br />
 📑 전체 동작 흐름 정리<br />
-
+<br />
 🎈 window.innerWidth 활용<br />
 🎈 scrollLeft 기반 가로 스크롤<br />
 🎈 반응형 레이아웃과 스크롤 동기화<br />
