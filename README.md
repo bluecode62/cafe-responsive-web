@@ -229,3 +229,49 @@ function getItemsPerMove() {
 ```
 ✏️ 현재 화면 너비에 따라 이동할 메뉴 개수를 결정<br />
 
+👉 window.innerWidth는 현재 브라우저의 화면 너비를 가져오는 JavaScript 속성<br />
+
+PC (769px 이상) ->	3개<br />
+타블렛 (601~768px) ->	2개<br />
+모바일 (600px 이하) ->	1개<br />
+
+```javascript
+rightBtn.addEventListener("click", () => {
+  const slideWidth = activeMenu.querySelector("li").offsetWidth + 5;
+  const moveCount = getItemsPerMove();
+
+  activeMenu.scrollLeft += slideWidth * moveCount;
+});
+```
+<h5>오른쪽 버튼 클릭 시 스크롤 이동</h5><br />
+
+activeMenu.querySelector("li").offsetWidth + 5;<br />
+✏️ 요소의 실제 너비(메뉴) 사이 gap 또는 margin 값 보정<br />
+
+const moveCount = getItemsPerMove();<br />
+✏️ 화면 크기에 따라 1 / 2 / 3개 이동<br />
+
+activeMenu.scrollLeft += slideWidth * moveCount;<br />
+✏️ scrollLeft → 가로 스크롤 위치<br />
+✏️ 메뉴 너비 × 이동 개수 만큼 이동<br />
+
+
+```javascript
+leftBtn.addEventListener("click", () => {
+  const slideWidth = activeMenu.querySelector("li").offsetWidth + 5;
+  const moveCount = getItemsPerMove();
+
+activeMenu.scrollLeft -= slideWidth * moveCount;
+```
+<h5>왼쪽 버튼 클릭 시 스크롤 이동</h5><br />
+
+✏️ 동일한 방식으로 scrollLeft 값을 감소시켜 반대 방향으로 이동합니다.<br />
+* activeMenu.scrollLeft -= slideWidth * moveCount; <- '-'로 빼서 뒤로 이동<br />
+
+📑 전체 동작 흐름 정리<br />
+
+🎈 window.innerWidth 활용<br />
+🎈 scrollLeft 기반 가로 스크롤<br />
+🎈 반응형 레이아웃과 스크롤 동기화<br />
+
+window.innerWidth를 활용하여 화면 크기에 따라 이동할 메뉴 개수를 동적으로 변경하고, scrollLeft를 이용해 반응형 가로 스크롤 메뉴를 구현했습니다.<br />
