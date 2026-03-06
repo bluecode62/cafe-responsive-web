@@ -665,12 +665,12 @@ subBtn.addEventListener('click', () => {
 * 너비 계산 문제<br />
 
 처음에는 offsetWidth로 슬라이드 너비를 계산했으나, margin과 border가 포함되지 않아 실제 화면에 맞는 스크롤 위치 계산이 안 됨.<br />
-해결: scrollWidth와 slider.clientWidth를 활용하여 실제 스크롤 가능한 전체 너비와 현재 보이는 영역 너비를 기준으로 슬라이드 위치를 계산.<br />
+: scrollWidth와 slider.clientWidth를 활용하여 실제 스크롤 가능한 전체 너비와 현재 보이는 영역 너비를 기준으로 슬라이드 위치를 계산.<br />
 
 * 현재 슬라이드 위치 추적 문제<br />
 
 여러 슬라이드 중 어떤 것이 화면에 가장 가까운지 정확하게 계산할 필요가 있었음.<br />
-해결: 아래 코드로 화면과 가장 가까운 슬라이드 index를 계산했습니다.<br />
+: 아래 코드로 화면과 가장 가까운 슬라이드 index를 계산했습니다.<br />
 
 ```
 let closestIndex = 0;
