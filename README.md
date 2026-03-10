@@ -211,6 +211,9 @@ scroll 기반으로 구현한 커스텀 무한 슬라이드로, cloneNode를 활
 scrollLeft와 offsetLeft 계산을 통해 드래그/버튼/자동 슬라이드 상황에서도 정확한 페이지 동기화를 구현했습니다.<br />
 
 <h1>반응형 가로 스크롤 메뉴</h1>
+<img width="426" height="569" alt="가로메뉴01" src="https://github.com/user-attachments/assets/972146e7-b66f-430a-b2ff-85ee6ea76f09" />
+<img width="768" height="557" alt="가로메뉴02" src="https://github.com/user-attachments/assets/b389cad4-2853-4290-9fd8-e2f7b3ec3b73" />
+<img width="1024" height="531" alt="가로메뉴03" src="https://github.com/user-attachments/assets/110951ea-4230-4093-acc7-439ad4532504" />
 <img width="595" height="524" alt="menu01" src="https://github.com/user-attachments/assets/466a8d2d-6d29-48bd-95ca-a3969b453abb" /><br />
 
 * 좌우 화살표 버튼으로 메뉴 이동<br />
