@@ -17,9 +17,9 @@
 }
 
 .img_box li {
-  // width: 450px;
-  // height: 500px;
-  // flex: 0 0 100%;
+  width: 450px;
+  height: 500px;
+  flex: 0 0 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -190,6 +190,8 @@ img {
 .img_box {
   overflow: hidden;
   position: relative;
+  width: 100%;
+  min-height: 400px;
   margin-top: 70px;
   scroll-snap-type: x mandatory;
 }

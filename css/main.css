@@ -1,6 +1,9 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=BBH+Bogle&family=BBH+Hegarty&family=Gowun+Dodum&family=Noto+Sans+KR:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 .img_box li {
+  width: 450px;
+  height: 500px;
+  flex: 0 0 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -208,6 +211,8 @@ img {
 .img_box {
   overflow: hidden;
   position: relative;
+  width: 100%;
+  min-height: 400px;
   margin-top: 70px;
   scroll-snap-type: x mandatory;
 }
