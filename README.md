@@ -556,13 +556,13 @@ moreBtn.style.display = "none";
 ```
 👉 필터가 적용된 상태에서는 더보기 버튼을 사용하지 않도록 숨김
 
-``` 
+```javascript 
 document.querySelectorAll(".filter_check input").forEach((input) => {
   input.addEventListener("change", applyFilter);
 });
 ```
-👉 각 체크박스에 이벤트를 추가 
-👉 체크 상태가 바뀔 때마다 필터가 실행(체크, 체크해제)
+👉 각 체크박스에 이벤트를 추가<br /> 
+👉 체크 상태가 바뀔 때마다 필터가 실행(체크, 체크해제)<br />
 
 
 📑 전체 동작 흐름 정리<br />
