@@ -587,7 +587,7 @@ document.querySelectorAll(".filter_check input").forEach((input) => {
 <img width="552" height="497" alt="디테일스크롤02" src="https://github.com/user-attachments/assets/697d3016-182e-4dac-9c45-58e6edef2503" /><br />
 <img width="566" height="594" alt="디테일스크롤03" src="https://github.com/user-attachments/assets/87b9429d-b056-449b-b641-3b0ae985bb5f" /><br />
 
-``` 
+```javascript
 // 페이지 상단에서 400px 이상 스크롤 시 구매 영역 표시
 gsap.to(buyLine, {
   opacity: 1,
@@ -613,21 +613,21 @@ gsap.to(buyLine, {
 ```
 ✏️ 스크롤 위치에 따라 구매 UI가 자연스럽게 등장/숨김 처리되도록 구현 
 
-```
+```javascript
 <div class="buyLine" data-price="14900">
 -> const price = Number(line.dataset.price);
 ```
 ✏️ 상품 가격을 HTML의 data-price 속성을 통해 가져오도록 구성<br />
 ✏️ JavaScript에서 data-price으로 가격 데이터 사용<br />
 
-```
+```javascript
 const buyLines = document.querySelectorAll('.buyLine');
 buyLines.forEach((line) => {
 ```
 ✏️  페이지에 동일한 구매 UI가 여러 개 있을 수 있기 때문에<br />
 querySelectorAll을 사용해 각 요소를 반복 처리하도록 구현<br />
 
-```
+```javascript
 function update() {
   const count = Number(input.value);
   totalNum.textContent = count;
@@ -638,7 +638,7 @@ function update() {
 ✏️ 총 가격이 개수 증가수 * 가격으로 반환<br />
 ✏️ toLocaleString()을 사용하여 가격에 천 단위 콤마가 자동 적용<br />
 
-```
+```javascript
 // 수량 증가버튼
 addBtn.addEventListener('click', () => {
   input.value = Number(input.value) + 1;
@@ -683,7 +683,7 @@ subBtn.addEventListener('click', () => {
 여러 슬라이드 중 어떤 것이 화면에 가장 가까운지 정확하게 계산할 필요가 있었음.<br />
 : 아래 코드로 화면과 가장 가까운 슬라이드 index를 계산했습니다.<br />
 
-```
+```javascript
 let closestIndex = 0;
 let minDistance = Infinity;
 
